@@ -11,23 +11,18 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.theme.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="preloader" class="preloader">
-        <div class="spinner"></div>
-    </div>
-
     <header class="main-header">
         <div class="container">
-            <div class="logo">
-                <a href="#hero">TATTOOKIRILL YUVELIR</a>
-            </div>
+            <a href="#" class="logo">
+                <span data-lang-key="hero_main_title">TATTOOKIRILL YUVELIR</span>
+            </a>
             <nav class="main-nav">
-                <ul>
+                <ul class="nav-list">
                     <li><a href="#about" data-lang-key="nav_about">Обо мне</a></li>
                     <li><a href="#services" data-lang-key="nav_services">Услуги</a></li>
                     <li><a href="#portfolio" data-lang-key="nav_portfolio">Работы</a></li>
@@ -35,292 +30,203 @@
                     <li><a href="#contact" data-lang-key="nav_contact">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="lang-switcher-wrapper">
-                <select id="lang-switcher" class="lang-switcher">
-                    <option value="ru">RU</option>
-                    <option value="uk">UA</option>
-                </select>
+            <div class="header-actions">
+                <div class="language-dropdown">
+                    <button class="lang-dropdown-toggle">
+                        <span class="current-lang">RU</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown-menu">
+                        <button class="lang-option" data-lang="ru">RU</button>
+                        <button class="lang-option" data-lang="en">EN</button>
+                        <button class="lang-option" data-lang="de">DE</button>
+                        <button class="lang-option" data-lang="ua">UA</button>
+                    </div>
+                </div>
+                <button class="hamburger" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <section id="hero" class="hero" style="background-image: url('images/fon.JPG');">
-        <div class="overlay"></div>
-        <div class="container" data-aos="fade-up">
-            <h1 data-lang-key="hero_main_title">TATTOOKIRILL YUVELIR</h1>
-            <p class="subtitle" data-lang-key="hero_subtitle">Tattoo Germany</p>
-            <p class="description" data-lang-key="hero_description">Ваш мастер эксклюзивных татуировок.</p>
-            <a href="#contact" class="btn" data-lang-key="hero_contact_btn">Связаться</a>
-        </div>
-    </section>
-
-    <section id="about" class="about section-padding">
-        <div class="overlay-dark"></div> 
-        <div class="container">
-            <h2 class="section-title" data-lang-key="about_title">Обо мне</h2>
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right">
-                    <img src="images/osebe.JPG" alt="Мастер тату Кирилл Ювелир">
-                </div>
-                <div class="about-text" data-aos="fade-left">
-                    <div class="text-background">
-                        <p data-lang-key="about_description_new"></p>
-                        <p data-lang-key="about_description_new_part2"></p>
-                    </div>
-                </div>
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <h1 data-lang-key="hero_main_title">TATTOOKIRILL YUVELIR</h1>
+                <p class="subtitle" data-lang-key="hero_subtitle">Tattoo Germany</p>
+                <p class="description" data-lang-key="hero_description">Ваш мастер эксклюзивных татуировок.</p>
+                <a href="#contact" class="btn primary-btn" data-lang-key="hero_contact_btn">Связаться</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services" class="services section-padding">
-        <div class="overlay-dark"></div>
-        <div class="container">
-            <h2 class="section-title" data-lang-key="services_title">Услуги</h2>
-            <div class="glide services-carousel" data-aos="fade-up">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <div class="service-item">
-                                <img src="images/real.jpg" alt="Услуга Реализм">
-                                <h3 data-lang-key="services_realism_title">Реализм</h3>
-                                <p data-lang-key="services_realism_description">Детализация и глубина для потрясающих портретов и сюжетов.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="service-item">
-                                <img src="images/yapon.jpg" alt="Услуга Японский стиль">
-                                <h3 data-lang-key="services_japanese_title">Японский стиль</h3>
-                                <p data-lang-key="services_japanese_description">Традиционные мотивы и яркие образы с глубоким смыслом.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="service-item">
-                                <img src="images/chikano.jpg" alt="Услуга Чикано">
-                                <h3 data-lang-key="services_chikano_title">Чикано</h3>
-                                <p data-lang-key="services_chikano_description">Эстетика улиц и культурные символы, выполненные в характерном стиле.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="service-item">
-                                <img src="images/grafic.jpg" alt="Услуга Графика">
-                                <h3 data-lang-key="services_graphic_title">Графика</h3>
-                                <p data-lang-key="services_graphic_description">Четкие линии и контраст для уникального графического искусства.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="service-item">
-                                <img src="images/mini.JPG" alt="Услуга Мини-тату">
-                                <h3 data-lang-key="services_mini_title">Мини-тату</h3>
-                                <p data-lang-key="services_mini_description">Изящные и аккуратные татуировки, идеальные для первого раза.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#9664;</button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#9654;</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="portfolio section-padding">
-        <div class="overlay-dark"></div>
-        <div class="container">
-            <h2 class="section-title" data-lang-key="portfolio_title">Работы</h2>
-            <div class="glide portfolio-carousel" data-aos="fade-up">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides gallery">
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r0.JPG" alt="Тату работа 0">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r1.PNG" alt="Тату работа 1">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r2.JPG" alt="Тату работа 2">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r3.PNG" alt="Тату работа 3">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r4.JPG" alt="Тату работа 4">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r5.JPG" alt="Тату работа 5">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r6.PNG" alt="Тату работа 6">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r7.JPG" alt="Тату работа 7">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r7.PNG" alt="Тату работа 7.1">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r8.PNG" alt="Тату работа 8">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r9.JPG" alt="Тату работа 9">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r10.JPG" alt="Тату работа 10">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r11.JPG" alt="Тату работа 11">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r13.JPG" alt="Тату работа 13">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r14.JPG" alt="Тату работа 14">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r15.PNG" alt="Тату работа 15">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r17.JPG" alt="Тату работа 17">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r18.JPG" alt="Тату работа 18">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r19.JPG" alt="Тату работа 19">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r20.JPG" alt="Тату работа 20">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r21.JPG" alt="Тату работа 21">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r22.PNG" alt="Тату работа 22">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r23.JPG" alt="Тату работа 23">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r24.JPG" alt="Тату работа 24">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r25.JPG" alt="Тату работа 25">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r27.PNG" alt="Тату работа 27">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r28.JPG" alt="Тату работа 28">
-                        </li>
-                        <li class="glide__slide gallery-item">
-                            <img src="images/r29.PNG" alt="Тату работа 29">
-                        </li>
-                    </ul>
-                </div>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#9664;</button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#9654;</button>
-                </div>
-                <div class="glide__bullets" data-glide-el="controls[nav]">
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" class="process section-padding">
-        <div class="overlay"></div>
-        <div class="container">
-            <h2 class="section-title" data-lang-key="process_title">Процесс создания тату</h2>
-            <div class="glide process-carousel" data-aos="fade-up">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <div class="process-step">
-                                <img src="images/proces1.JPG" alt="Шаг 1: Консультация">
-                                <h3 data-lang-key="process_step1_title">Консультация и разработка</h3>
-                                <p data-lang-key="process_step1_description">Обсуждение идеи, выбор стиля, разработка индивидуального эскиза. Отвечаю на все вопросы и помогаю определиться с деталями.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="process-step">
-                                <img src="images/proces2.JPG" alt="Шаг 2: Подготовка">
-                                <h3 data-lang-key="process_step2_title">Подготовка</h3>
-                                <p data-lang-key="process_step2_description">Подготовка кожи и рабочего места, стерилизация оборудования. Использую только одноразовые и сертифицированные материалы.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="process-step">
-                                <img src="images/proces3.JPG" alt="Шаг 3: Нанесение тату">
-                                <h3 data-lang-key="process_step3_title">Нанесение тату</h3>
-                                <p data-lang-key="process_step3_description">Аккуратное и профессиональное нанесение татуировки, с учетом всех нюансов и пожеланий клиента.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="process-step">
-                                <img src="images/proces4.JPG" alt="Шаг 4: Завершение и рекомендации">
-                                <h3 data-lang-key="process_step4_title">Завершение и рекомендации</h3>
-                                <p data-lang-key="process_step4_description">Нанесение защитной повязки, подробные инструкции по уходу за свежей татуировкой для быстрого заживления и сохранения качества.</p>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="process-step">
-                                <img src="images/proces5.JPG" alt="Шаг 5: Коррекция и доработка">
-                                <h3 data-lang-key="process_step5_title">Коррекция и доработка</h3>
-                                <p data-lang-key="process_step5_description">При необходимости провожу коррекцию татуировки после заживления, чтобы добиться идеального результата. Гарантирую, что вы будете довольны своей новой татуировкой.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#9664;</button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#9654;</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact section-padding">
-        <div class="overlay-dark"></div>
-        <div class="container">
-            <h2 class="section-title" data-lang-key="contact_title">Контакты</h2>
-            <div class="text-background">
-                <p class="contact-info-text" data-lang-key="contact_info_text">Готов ответить на все ваши вопросы и записать на консультацию. Свяжитесь со мной удобным для вас способом!</p>
-                <div class="contact-details">
-                    <div class="contact-methods" data-aos="fade-right">
-                        <div class="contact-method">
-                            <i class="fas fa-phone-alt"></i>
-                            <a href="tel:+380977702680">+380977702680</a>
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="about_title">Обо мне</h2>
+                <div class="about-content">
+                    <img src="images/osebe.JPG" alt="Кирилл Ювелир" class="about-image" data-aos="fade-right">
+                    <div class="about-text-wrapper"> <div class="about-text" data-aos="fade-left">
+                            <p data-lang-key="about_description_new">Привет! Меня зовут Кирилл, я тату-мастер, и свой путь в этой профессии начал довольно рано — в 16 лет. Всё началось с моей первой татуировки, которую я сделал без разрешения родителей. Этот опыт перевернул моё восприятие: я понял, что татуировка — это не просто рисунок на теле, а настоящее искусство и способ самовыражения.</p>
+                            <p data-lang-key="about_description_new_part2">После этого я решил пойти на обучение и погрузился в мир татуировок всерьёз. С тех пор моя жизнь неразрывно связана с этой профессией. Я постоянно развиваюсь, пробую новые стили и техники, чтобы каждое моё тату было не просто рисунком, а отражением личности клиента и моим вкладом в его уникальную историю. Мой подход — это не просто нанесение чернил, это создание произведений искусства, которые будут радовать вас долгие годы.</p>
                         </div>
-                        <div class="contact-method">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="services_title">Услуги</h2>
+                <div class="swiper mySwiper services-carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide service-item" data-aos="zoom-in">
+                            <img src="images/real.jpg" alt="Реализм">
+                            <h3 data-lang-key="service_realism_title">Реализм</h3>
+                            <p data-lang-key="service_realism_description">Передача изображения с фотографической точностью, детализация и объём.</p>
+                        </div>
+                        <div class="swiper-slide service-item" data-aos="zoom-in">
+                            <img src="images/yapon.jpg" alt="Японский стиль">
+                            <h3 data-lang-key="service_japanese_title">Японский стиль</h3>
+                            <p data-lang-key="service_japanese_description">Традиционные мотивы: драконы, карпы, самураи. Яркие цвета и глубокий символизм.</p>
+                        </div>
+                        <div class="swiper-slide service-item" data-aos="zoom-in">
+                            <img src="images/chikano.jpg" alt="Чикано">
+                            <h3 data-lang-key="service_chicano_title">Чикано</h3>
+                            <p data-lang-key="service_chicano_description">Культура латиноамериканских банд: клоунессы, пистолеты, розы. Смелые линии и тени.</p>
+                        </div>
+                        <div class="swiper-slide service-item" data-aos="zoom-in">
+                            <img src="images/grafic.jpg" alt="Орнаментал/Графика">
+                            <h3 data-lang-key="service_ornamental_title">Орнаментал/Графика</h3>
+                            <p data-lang-key="service_ornamental_description">Узоры, геометрия, мандалы. Чистые линии и абстрактные формы.</p>
+                        </div>
+                        <div class="swiper-slide service-item" data-aos="zoom-in">
+                            <img src="images/mini.JPG" alt="Мини-тату">
+                            <h3 data-lang-key="service_mini_title">Мини-тату</h3>
+                            <p data-lang-key="service_mini_description">Маленькие и изящные татуировки. Идеально для первого опыта или деликатных зон.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="portfolio">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="portfolio_title">Мои работы</h2>
+                <div class="swiper mySwiper portfolio-carousel">
+                    <div class="swiper-wrapper gallery-grid">
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r0.JPG" alt="Тату 1"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r1.PNG" alt="Тату 2"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r2.JPG" alt="Тату 3"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r3.PNG" alt="Тату 4"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r4.JPG" alt="Тату 5"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r5.JPG" alt="Тату 6"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r6.PNG" alt="Тату 7"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r7.JPG" alt="Тату 8"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r8.PNG" alt="Тату 9"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r9.JPG" alt="Тату 10"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r10.JPG" alt="Тату 11"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r11.JPG" alt="Тату 12"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r13.JPG" alt="Тату 13"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r14.JPG" alt="Тату 14"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r15.PNG" alt="Тату 15"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r17.JPG" alt="Тату 16"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r18.JPG" alt="Тату 17"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r19.JPG" alt="Тату 18"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r20.JPG" alt="Тату 19"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r21.JPG" alt="Тату 20"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r22.PNG" alt="Тату 21"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r23.JPG" alt="Тату 22"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r24.JPG" alt="Тату 23"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r25.JPG" alt="Тату 24"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r27.PNG" alt="Тату 25"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r28.JPG" alt="Тату 26"></div>
+                        <div class="swiper-slide gallery-item" data-aos="zoom-in"><img src="images/r29.PNG" alt="Тату 27"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section" id="process">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="process_title">Процесс создания татуировки</h2>
+                <div class="swiper mySwiper process-carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide process-step" data-aos="fade-up">
+                            <img src="images/proces1.JPG" alt="Консультация">
+                            <h3 data-lang-key="process_step1_title">1. Консультация</h3>
+                            <p data-lang-key="process_step1_description">Обсуждение идеи, стиля и размера татуировки, выбор места нанесения.</p>
+                        </div>
+                        <div class="swiper-slide process-step" data-aos="fade-up">
+                            <img src="images/proces2.JPG" alt="Разработка эскиза">
+                            <h3 data-lang-key="process_step2_title">2. Разработка эскиза</h3>
+                            <p data-lang-key="process_step2_description">Создание уникального эскиза, учитывая все пожелания клиента.</p>
+                        </div>
+                        <div class="swiper-slide process-step" data-aos="fade-up">
+                            <img src="images/proces3.JPG" alt="Подготовка к сеансу">
+                            <h3 data-lang-key="process_step3_title">3. Подготовка к сеансу</h3>
+                            <p data-lang-key="process_step3_description">Подготовка рабочего места и кожи клиента, обеспечение стерильности.</p>
+                        </div>
+                        <div class="swiper-slide process-step" data-aos="fade-up">
+                            <img src="images/proces4.JPG" alt="Нанесение татуировки">
+                            <h3 data-lang-key="process_step4_title">4. Нанесение татуировки</h3>
+                            <p data-lang-key="process_step4_description">Аккуратное и точное выполнение работы профессиональным мастером.</p>
+                        </div>
+                        <div class="swiper-slide process-step" data-aos="fade-up">
+                            <img src="images/proces5.JPG" alt="Уход и заживление">
+                            <h3 data-lang-key="process_step5_title">5. Уход и заживление</h3>
+                            <p data-lang-key="process_step5_description">Рекомендации по уходу за новой татуировкой для быстрого и правильного заживления.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="contact_title">Свяжитесь со мной</h2>
+                <div class="contact-content">
+                    <div class="contact-info contact-info-wrapper" data-aos="fade-right"> <p data-lang-key="contact_description">Готов воплотить ваши идеи в жизнь! Для записи на консультацию или сеанс, свяжитесь со мной любым удобным способом.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+380977702680">+380 97 770 26 80</a>
+                        </div>
+                        <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:nastich.kirill@gmail.com">nastich.kirill@gmail.com</a>
                         </div>
-                        <div class="contact-method">
-                            <i class="fab fa-instagram"></i>
-                            <a href="https://www.instagram.com/tattookirill_yuvelir/" target="_blank">tattookirill_yuvelir</a>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-telegram-plane"></i>
-                            <a href="tg://msg?to=+380977702680" target="_blank">Telegram</a>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-tiktok"></i>
-                            <a href="https://www.tiktok.com/@keryatattoo?_t=ZM-8xOIafpGdjc&_r=1" target="_blank">TikTok: keryatattoo</a>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/tattookirill_yuvelir/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/380977702680" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="viber://chat?number=%2B380977702680" target="_blank" aria-label="Viber"><i class="fab fa-viber"></i></a>
+                            <a href="tg://resolve?phone=+380977702680" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
                         </div>
                     </div>
-                </div>
+                    </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <div class="social-fixed-buttons left-side">
-        <a href="mailto:nastich.kirill@gmail.com" class="social-side-btn email-side-btn" aria-label="Написать письмо">
-            <i class="fas fa-envelope"></i>
-        </a>
         <a href="https://www.instagram.com/tattookirill_yuvelir/" target="_blank" class="social-side-btn instagram-side-btn" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
         </a>
-        <a href="tg://msg?to=+380977702680" target="_blank" class="social-side-btn telegram-side-btn" aria-label="Telegram">
+        <a href="https://wa.me/380977702680" target="_blank" class="social-side-btn whatsapp-side-btn" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="viber://chat?number=%2B380977702680" target="_blank" class="social-side-btn viber-side-btn" aria-label="Viber">
+            <i class="fab fa-viber"></i>
+        </a>
+        <a href="tg://resolve?phone=+380977702680" target="_blank" class="social-side-btn telegram-side-btn" aria-label="Telegram">
             <i class="fab fa-telegram-plane"></i>
         </a>
         <a href="https://www.tiktok.com/@keryatattoo?_t=ZM-8xOIafpGdjc&_r=1" target="_blank" class="social-side-btn tiktok-side-btn" aria-label="TikTok">
@@ -346,12 +252,12 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2023 TATTOOKIRILL YUVELIR. <span data-lang-key="footer_rights">Все права защищены.</span></p>
+            <p>&copy; 2025 Kirill Yuvelir. Все права защищены.</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
