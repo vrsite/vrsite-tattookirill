@@ -1,0 +1,1091 @@
+/* Подключение шрифтов (уже есть в HTML) */
+
+:root {
+    --primary-bg: rgba(25, 25, 25, 0.2); /* Сделано прозрачнее */
+    --secondary-bg: rgba(40, 40, 40, 0.8); /* Более прозрачный для языка */
+    --text-light: #f8f8f8;
+    --text-medium: #bbb;
+    --text-dark: #888;
+    --border-color: #555;
+    --accent-color: #e0b040;
+    --accent-hover-color: #ffc400;
+    --shadow-dark: rgba(0, 0, 0, 0.9);
+    --shadow-medium: rgba(0, 0, 0, 0.7);
+    --shadow-light: rgba(0, 0, 0, 0.5);
+    --header-height-desktop: 80px;
+    --header-height-mobile: 60px;
+
+    /* Новые переменные для кнопок соцсетей */
+    --social-btn-size: 55px; /* Единый размер для всех кнопок */
+    --social-icon-size: 1.6em; /* Размер иконки внутри кнопки */
+
+    /* Семейства шрифтов */
+    --font-heading: 'Oswald', sans-serif; /* Для заголовков */
+    --font-body: 'Roboto', sans-serif; /* Для основного текста */
+}
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: #1a1a1a; /* Основной темный фон, если fon2.jpeg не загрузится */
+    overflow-x: hidden; /* Предотвращает горизонтальный скролл */
+    
+    /* Global background image */
+    background-image: url('images/fon2.jpeg'); /* Используем fon2.jpeg как основной фон */
+    background-size: cover; /* Заполняет всю область, обрезая при необходимости */
+    background-repeat: no-repeat; /* Фон не повторяется */
+    background-position: center center; /* Центрируем фон */
+    background-attachment: fixed; /* Закрепляем фон при прокрутке */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+    position: relative;
+    z-index: 1; /* Для правильного наложения фона */
+    /* Убрано: background-color: rgba(26, 26, 26, 0.9); */
+}
+
+/* Оверлей для секций с фоновым изображением */
+/* Удалены стили .overlay-dark, так как теперь их заменит .text-background */
+.hero, .process {
+    position: relative; /* Необходимо для позиционирования overlay */
+    background-image: none; /* Сбрасываем, если было установлено ранее, чтобы контролировать в конкретных секциях */
+}
+
+.hero .overlay, .process .overlay { /* Оверлей только для Hero и Process */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Темный полупрозрачный слой для лучшей читаемости текста */
+    z-index: 0; /* Оверлей должен быть под контентом */
+}
+
+/* Для всех секций, чтобы текст читался поверх общего фона */
+.section-padding > .container, .hero > .container {
+    position: relative;
+    z-index: 2; /* Контент должен быть над оверлеем */
+}
+
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3.5em;
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px var(--shadow-dark);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover-color);
+    transform: translateY(-2px);
+}
+
+/* Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    visibility: visible;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Header */
+.main-header {
+    background-color: var(--primary-bg);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    backdrop-filter: blur(5px); /* Эффект размытия */
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--border-color);
+    height: var(--header-height-desktop);
+    display: flex;
+    align-items: center;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Убедимся, что контент занимает всю высоту */
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--accent-hover-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px; /* Для подчеркивания */
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.main-nav ul li a:hover {
+    color: var(--accent-hover-color);
+}
+
+/* Language Switcher */
+.lang-switcher-wrapper {
+    margin-left: 20px;
+}
+
+.lang-switcher {
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    -webkit-appearance: none; /* Убираем стандартные стили для select */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23f8f8f8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-5.4H18.2c-4.9%200-9.2%202.2-12.7%205.4S0%2078.6%200%2084.2c0%205.6%202.2%2010.5%205.4%2014L137%20227.9c3.2%203.2%207%204.9%2011.1%204.9h2.3c4.1%200%208.1-1.7%2011.1-4.9L287%2098.2c3.2-3.6%205.4-8.5%205.4-14.1c0-5.6-2.2-10.5-5.4-14z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+    padding-right: 30px; /* Отступ для стрелки */
+}
+
+.lang-switcher:hover {
+    background-color: rgba(60, 60, 60, 0.8);
+    border-color: var(--accent-hover-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    padding-top: var(--header-height-desktop); /* Учитываем высоту хедера */
+    
+    background-image: url('images/fon.JPG'); /* Возвращаем fon.JPG */
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Прокручивается вместе с содержимым */
+}
+
+.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Темный полупрозрачный слой */
+}
+
+.hero .container {
+    position: relative; /* Чтобы контент был над оверлеем */
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    text-shadow: 3px 3px 8px var(--shadow-dark);
+}
+
+.hero .subtitle {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: var(--text-medium);
+}
+
+.hero .description {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: var(--text-light);
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Для адаптивности */
+    gap: 40px;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px; /* Минимальная ширина, чтобы не схлопывался */
+    text-align: center; /* Центрирование изображения */
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px var(--shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-medium);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* Text Background for About and Contact */
+.text-background {
+    background-color: rgba(26, 26, 26, 0.8); /* Полупрозрачный темный фон */
+    padding: 30px;
+    border-radius: 15px; /* Скругленные углы для "облака" */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7); /* Тень для объема */
+    border: 1px solid rgba(85, 85, 85, 0.5); /* Легкая обводка */
+    backdrop-filter: blur(3px); /* Небольшое размытие фона под облаком */
+    -webkit-backdrop-filter: blur(3px);
+    margin-top: 20px; /* Отступ сверху */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.contact .text-background { /* Отдельные стили для облака контактов */
+    max-width: 800px; /* Ширина "облака" в контактах */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Services Section */
+.service-item {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Для Flexbox в Glide */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.7; /* Default opacity for non-active slides */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-dark);
+}
+
+.service-item img {
+    max-width: 100%;
+    height: 200px; /* Фиксированная высота для изображений услуг */
+    object-fit: cover; /* Обрезка, чтобы изображение заполняло пространство */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: var(--text-medium);
+    flex-grow: 1; /* Чтобы текст занимал доступное пространство */
+}
+
+/* Glide.js Customizations for Services, Portfolio, Process */
+/* Shared Arrow and Bullet Styles */
+.glide__arrow {
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    width: 45px; /* Slightly larger arrows */
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    box-shadow: 0 2px 5px var(--shadow-dark);
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+    opacity: 0.7; /* Slightly transparent */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+.glide__arrow:hover {
+    background-color: var(--accent-hover-color);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1); /* Zoom effect on hover */
+}
+
+.glide__arrow--left {
+    left: -20px; /* Push arrows out slightly */
+}
+
+.glide__arrow--right {
+    right: -20px; /* Push arrows out slightly */
+}
+
+
+/* Styles for active slide (center element) - applies to all carousels */
+.glide__slide {
+    display: flex; /* Ensures content centers */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Smoother transition */
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    backface-visibility: hidden; /* Prevent flickering */
+}
+
+.glide__slide--active {
+    transform: scale(1.15); /* Make center item significantly larger */
+    opacity: 1; /* Fully opaque */
+    z-index: 10; /* Ensure it stays on top */
+    box-shadow: 0 15px 30px var(--shadow-dark); /* More pronounced shadow */
+}
+
+/* Styles for non-active slides (to create the "circular" impression) */
+.glide__slide:not(.glide__slide--active) {
+    transform: scale(0.9); /* Make non-active items smaller */
+    opacity: 0.6; /* Make non-active items slightly transparent */
+    filter: brightness(0.7); /* Slightly dim non-active images/content */
+}
+
+
+/* Portfolio Section */
+.portfolio-carousel .gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-dark);
+    cursor: pointer;
+    height: 100%; /* Ensure glide slide items take full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a2a2a; /* Фон для элемента галереи */
+}
+
+.portfolio-carousel .gallery-item img {
+    width: 100%;
+    height: 300px; /* Fixed height for gallery images */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.portfolio-carousel .gallery-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.7);
+}
+
+/* Process Section */
+.process {
+    text-align: center;
+    background-image: url('images/fon2.jpeg'); /* Остается фон fon2.jpeg */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.process .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.process .container {
+    position: relative;
+    z-index: 1;
+}
+
+.process .section-title {
+    color: var(--accent-color);
+    margin-bottom: 40px;
+}
+
+.process-step {
+    background-color: rgba(40, 40, 40, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-dark);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Выравнивание содержимого вверх */
+    opacity: 0.7; /* Default opacity for non-active slides */
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    background-color: rgba(50, 50, 50, 0.95);
+}
+
+.process-step img {
+    max-width: 100%;
+    height: 150px; /* Фиксированная высота для изображений процесса */
+    object-fit: contain; /* Сохранение пропорций */
+    margin: 0 auto 20px auto;
+    display: block;
+    filter: drop-shadow(0 0 5px var(--accent-color)); /* Небольшая тень для иконок */
+}
+
+.process-step h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.process-step p {
+    font-size: 0.95em;
+    color: var(--text-medium);
+    flex-grow: 1; /* Чтобы текст занимал доступное пространство */
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+
+.contact-info-text {
+    font-size: 1.1em;
+    color: var(--text-medium);
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.contact-methods {
+    flex: 1;
+    min-width: 300px;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+
+.contact-method:last-child {
+    margin-bottom: 0;
+}
+
+.contact-method i {
+    color: var(--accent-color);
+    margin-right: 15px;
+    font-size: 1.5em;
+    width: 30px; /* Фиксированная ширина для иконок */
+    text-align: center;
+}
+
+.contact-method a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: var(--accent-hover-color);
+}
+
+
+/* Lightbox Styles */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#lightbox.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Сохраняет пропорции изображения */
+    margin: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: var(--accent-hover-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    user-select: none;
+    -webkit-user-select: none;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.lightbox-prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.lightbox-next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Footer */
+.main-footer {
+    background-color: #111;
+    color: var(--text-medium);
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+}
+
+/* НОВЫЕ СТИЛИ ДЛЯ ОТДЕЛЬНЫХ КНОПОК */
+/* Общие стили для фиксированных кнопок (социальных и скролла) */
+.social-fixed-buttons,
+.scroll-fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 990; /* Ниже хедера и лайтбокса */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none; /* По умолчанию некликабельные */
+}
+
+/* Социальные кнопки (СЛЕВА) */
+.social-fixed-buttons {
+    left: 20px;
+    transform: translateX(-100%); /* Начальное положение для анимации слева */
+}
+
+.social-fixed-buttons.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+}
+
+/* Кнопки скролла (СПРАВА) */
+.scroll-fixed-buttons {
+    right: 20px;
+    transform: translateX(100%); /* Начальное положение для анимации справа */
+    align-items: flex-end; /* Выравнивание кнопок по правому краю */
+}
+
+.scroll-fixed-buttons.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+}
+
+
+.social-side-btn, .scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--social-btn-size);
+    height: var(--social-btn-size);
+    border-radius: 50%;
+    background-color: rgba(50, 50, 50, 0.8);
+    color: var(--text-light);
+    font-size: var(--social-icon-size);
+    text-decoration: none;
+    box-shadow: 0 2px 10px var(--shadow-dark);
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.social-side-btn:hover, .scroll-btn:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Specific button colors (optional, if you want brand colors) */
+.email-side-btn:hover { background-color: #D44638; color: #fff; }
+.instagram-side-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; }
+.telegram-side-btn:hover { background-color: #0088CC; color: #fff; }
+.tiktok-side-btn:hover { background-color: #000; color: #fff; text-shadow: 2px 2px #25F4EE, -2px -2px #FF0050; }
+
+
+/* Scroll navigation buttons (уже были, но теперь применяются к новому классу) */
+.scroll-navigation-buttons { /* Этот класс больше не нужен, его функционал перешел к .scroll-fixed-buttons */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .main-header .container {
+        flex-direction: column;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .main-header {
+        height: auto;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .main-nav ul li {
+        margin: 5px 15px;
+    }
+
+    .lang-switcher-wrapper {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 3.5em;
+    }
+
+    .hero .subtitle {
+        font-size: 1.4em;
+    }
+
+    .hero .description {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 2.8em;
+        margin-bottom: 40px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image, .about-text {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .glide__slide--active {
+        transform: scale(1.05);
+    }
+    .glide__slide:not(.glide__slide--active) {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+
+    .service-item, .process-step {
+        padding: 25px;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .contact-methods {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .text-background {
+        padding: 25px;
+    }
+
+    /* Адаптация для новых позиций кнопок */
+    .social-fixed-buttons,
+    .scroll-fixed-buttons {
+        bottom: 20px; /* Сохраняем отступ снизу */
+        gap: 10px; /* Уменьшаем зазор между кнопками */
+    }
+    .social-fixed-buttons {
+        left: 20px; /* Слева */
+        right: auto;
+    }
+    .scroll-fixed-buttons {
+        right: 20px; /* Справа */
+        left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 10px 0;
+    }
+    .logo a {
+        font-size: 1.5em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero {
+        padding-top: var(--header-height-mobile);
+    }
+
+    .hero h1 {
+        font-size: 2.8em;
+    }
+    .hero .subtitle {
+        font-size: 1.2em;
+    }
+    .hero .description {
+        font-size: 0.9em;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .service-item img, .process-step img {
+        height: 180px;
+    }
+
+    .portfolio-carousel .gallery-item img {
+        height: 250px;
+    }
+
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 85%;
+    }
+
+    .lightbox-close {
+        font-size: 35px;
+        top: 15px;
+        right: 25px;
+    }
+    .lightbox-prev, .lightbox-next {
+        font-size: 18px;
+        padding: 12px;
+        margin-top: -30px;
+    }
+
+    .text-background {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    /* Мобильные стили для кнопок: социальные слева, скролл справа */
+    .social-fixed-buttons {
+        left: 15px; /* Слева, ближе к краю */
+    }
+    .scroll-fixed-buttons {
+        right: 15px; /* Справа, ближе к краю */
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        height: auto;
+    }
+    .main-header .container {
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    .main-nav ul {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .main-nav ul li {
+        margin: 5px 10px;
+    }
+
+    .lang-switcher-wrapper {
+        width: 100%;
+        text-align: center;
+    }
+    .lang-switcher {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .hero {
+        padding-top: var(--header-height-mobile);
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero .subtitle {
+        font-size: 1em;
+    }
+    .hero .description {
+        font-size: 0.85em;
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+
+    .service-item {
+        padding: 15px;
+    }
+    .service-item img {
+        height: 140px;
+    }
+    .service-item h3 {
+        font-size: 1.3em;
+    }
+    .service-item p {
+        font-size: 0.85em;
+    }
+
+    .process-step {
+        padding: 20px;
+    }
+    .process-step img {
+        height: 120px;
+    }
+    .process-step h3 {
+        font-size: 1.3em;
+    }
+    .process-step p {
+        font-size: 0.9em;
+    }
+    
+    :root {
+        --social-btn-size: 40px;
+        --social-icon-size: 1.4em;
+    }
+
+    /* Адаптация кнопок на очень маленьких экранах */
+    .social-fixed-buttons,
+    .scroll-fixed-buttons {
+        bottom: 70px; /* Поднимаем повыше, чтобы не перекрывалось футером или другими элементами */
+        gap: 8px; /* Ещё меньше зазор */
+    }
+    .social-fixed-buttons {
+        left: 10px; /* Ещё ближе к краю */
+    }
+    .scroll-fixed-buttons {
+        right: 10px; /* Ещё ближе к краю */
+    }
+
+    .scroll-btn {
+        width: var(--social-btn-size);
+        height: var(--social-btn-size);
+        font-size: var(--social-icon-size);
+    }
+
+    .glide__arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8em;
+    }
+    .glide__arrow--left {
+        left: 0px;
+    }
+    .glide__arrow--right {
+        right: 0px;
+    }
+}
