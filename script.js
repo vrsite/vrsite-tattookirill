@@ -9,44 +9,132 @@ const translations = {
         nav_process: "Процесс",
         nav_contact: "Контакты",
         hero_subtitle: "Tattoo Germany",
-        hero_description_short: "Ваш мастер эксклюзивных татуировок", // Новый короткий текст
-        hero_description: "Ваш мастер эксклюзивных татуировок.", // Обновлено
+        hero_description_short: "Ваш мастер эксклюзивных татуировок",
+        hero_description: "Ваш мастер эксклюзивных татуировок.",
         hero_contact_btn: "Связаться",
         about_title: "Обо мне",
         about_description_new: "Привет! Меня зовут Кирилл, я тату-мастер, и свой путь в этой профессии начал довольно рано — в 16 лет. Всё началось с моей первой татуировки, которую я сделал без разрешения родителей. Этот опыт перевернул моё восприятие: я понял, что татуировка — это не просто рисунок на теле, а настоящее искусство и способ самовыражения.",
-        about_description_new_part2: "После этого я решил пойти на обучение и погрузился в мир татуировок всерьёз. С тех пор моя жизнь неразрывно связана с этой профессией. Я постоянно развиваюсь, пробую новые стили и техники, чтобы каждое моё тату было не просто работой, а уникальной историей, оставленной на теле человека.",
+        about_description_new_part2: "После этого я решил пойти на обучение и погрузился в мир татуировок всерьёз. С тех пор моя жизнь неразрывно связана с этой профессией. Я постоянно развиваюсь, пробую новые стили и техники, чтобы каждое моё тату было не просто рисунком, а отражением личности клиента и моим вкладом в его уникальную историю. Мой подход — это не просто нанесение чернил, это создание произведений искусства, которые будут радовать вас долгие годы.",
         services_title: "Услуги",
-        services_realism_title: "Реализм",
-        services_realism_description: "Детализация и глубина для потрясающих портретов и сюжетов.",
-        services_japanese_title: "Японский стиль",
-        services_japanese_description: "Традиционные мотивы и яркие образы с глубоким смыслом.",
-        services_chikano_title: "Чикано",
-        services_chikano_description: "Эстетика улиц и культурные символы, выполненные в характерном стиле.",
-        services_graphic_title: "Графика",
-        services_graphic_description: "Четкие линии и контраст для уникального графического искусства.",
-        services_mini_title: "Мини-тату",
-        services_mini_description: "Изящные и аккуратные татуировки, идеальные для первого раза.",
-        portfolio_title: "Работы",
-        process_title: "Процесс создания тату",
-        process_step1_title: "Консультация и разработка",
-        process_step1_description: "Обсуждение идеи, выбор стиля, разработка индивидуального эскиза. Отвечаю на все вопросы и помогаю определиться с деталями.",
-        process_step2_title: "Подготовка",
-        process_step2_description: "Подготовка кожи и рабочего места, стерилизация оборудования. Использую только одноразовые и сертифицированные материалы.",
-        process_step3_title: "Нанесение тату",
-        process_step3_description: "Аккуратное и профессиональное нанесение татуировки, с учетом всех нюансов и пожеланий клиента.",
-        process_step4_title: "Завершение и рекомендации",
-        process_step4_description: "Нанесение защитной повязки, подробные инструкции по уходу за свежей татуировкой для быстрого заживления и сохранения качества.",
-        process_step5_title: "Коррекция и доработка",
-        process_step5_description: "При необходимости провожу коррекцию татуировки после заживления, чтобы добиться идеального результата. Гарантирую, что вы будете довольны своей новой татуировкой.",
-        contact_title: "Контакты",
-        contact_info_text: "Готов ответить на все ваши вопросы и записать на консультацию. Свяжитесь со мной удобным для вас способом!",
-        contact_name_label: "Ваше имя:",
-        contact_email_label: "Ваш Email:",
-        contact_message_label: "Ваше сообщение:",
-        contact_send_btn: "Отправить",
-        footer_rights: "Все права защищены."
+        service_realism_title: "Реализм",
+        service_realism_description: "Передача изображения с фотографической точностью, детализация и объём.",
+        service_japanese_title: "Японский стиль",
+        service_japanese_description: "Традиционные мотивы: драконы, карпы, самураи. Яркие цвета и глубокий символизм.",
+        service_chicano_title: "Чикано",
+        service_chicano_description: "Культура латиноамериканских банд: клоунессы, пистолеты, розы. Смелые линии и тени.",
+        service_ornamental_title: "Орнаментал/Графика",
+        service_ornamental_description: "Узоры, геометрия, мандалы. Чистые линии и абстрактные формы.",
+        service_mini_title: "Мини-тату",
+        service_mini_description: "Маленькие и изящные татуировки. Идеально для первого опыта или деликатных зон.",
+        portfolio_title: "Мои работы",
+        process_title: "Процесс создания татуировки",
+        process_step1_title: "1. Консультация",
+        process_step1_description: "Обсуждение идеи, стиля и размера татуировки, выбор места нанесения.",
+        process_step2_title: "2. Разработка эскиза",
+        process_step2_description: "Создание уникального эскиза, учитывая все пожелания клиента.",
+        process_step3_title: "3. Подготовка к сеансу",
+        process_step3_description: "Подготовка рабочего места и кожи клиента, обеспечение стерильности.",
+        process_step4_title: "4. Нанесение татуировки",
+        process_step4_description: "Аккуратное и точное выполнение работы профессиональным мастером.",
+        process_step5_title: "5. Уход и заживление",
+        process_step5_description: "Рекомендации по уходу за новой татуировкой для быстрого и правильного заживления.",
+        contact_title: "Свяжитесь со мной",
+        contact_description: "Готов воплотить ваши идеи в жизнь! Для записи на консультацию или сеанс, свяжитесь со мной любым удобным способом."
     },
-    uk: {
+    en: {
+        page_title_main: "Portfolio",
+        hero_main_title: "TATTOOKIRILL YUVELIR",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_portfolio: "Works",
+        nav_process: "Process",
+        nav_contact: "Contact",
+        hero_subtitle: "Tattoo Germany",
+        hero_description_short: "Your master of exclusive tattoos",
+        hero_description: "Your master of exclusive tattoos.",
+        hero_contact_btn: "Contact Me",
+        about_title: "About Me",
+        about_description_new: "Hi! My name is Kirill, I'm a tattoo artist, and I started my journey in this profession quite early — at 16 years old. It all began with my first tattoo, which I got without my parents' permission. This experience completely changed my perception: I realized that tattooing is not just a drawing on the body, but a true art and a way of self-expression.",
+        about_description_new_part2: "After that, I decided to undergo training and seriously immersed myself in the world of tattoos. Since then, my life has been inextricably linked with this profession. I constantly develop, try new styles and techniques, so that each of my tattoos is not just a drawing, but a reflection of the client's personality and my contribution to their unique story. My approach is not just applying ink, it's creating works of art that will delight you for many years.",
+        services_title: "Services",
+        service_realism_title: "Realism",
+        service_realism_description: "Achieving photographic accuracy, detail, and volume in tattoos.",
+        service_japanese_title: "Japanese Style",
+        service_japanese_description: "Traditional motifs: dragons, koi fish, samurai. Vibrant colors and deep symbolism.",
+        service_chicano_title: "Chicano",
+        service_chicano_description: "Latin American gang culture: clownesses, pistols, roses. Bold lines and shading.",
+        service_ornamental_title: "Ornamental/Graphic",
+        service_ornamental_description: "Patterns, geometry, mandalas. Clean lines and abstract forms.",
+        service_mini_title: "Mini-Tattoo",
+        service_mini_description: "Small and delicate tattoos. Ideal for first-timers or subtle placements.",
+        portfolio_title: "My Works",
+        process_title: "Tattoo Creation Process",
+        process_step1_title: "1. Consultation",
+        process_step1_description: "Discussing the idea, style, and size of the tattoo, choosing the placement.",
+        process_step2_title: "2. Sketch Development",
+        process_step2_description: "Creating a unique sketch, considering all client wishes.",
+        process_step3_title: "3. Session Preparation",
+        process_step3_description: "Preparing the workspace and client's skin, ensuring sterility.",
+        process_step4_title: "4. Tattoo Application",
+        process_step4_description: "Careful and precise execution of the work by a professional artist.",
+        service_mini_description: "Small and delicate tattoos. Ideal for first-timers or subtle placements.",
+        portfolio_title: "My Works",
+        process_title: "Tattoo Creation Process",
+        process_step1_title: "1. Consultation",
+        process_step1_description: "Discussing the idea, style, and size of the tattoo, choosing the placement.",
+        process_step2_title: "2. Sketch Development",
+        process_step2_description: "Creating a unique sketch, considering all client wishes.",
+        process_step3_title: "3. Session Preparation",
+        process_step3_description: "Preparing the workspace and client's skin, ensuring sterility.",
+        process_step4_title: "4. Tattoo Application",
+        process_step4_description: "Careful and precise execution of the work by a professional artist.",
+        process_step5_title: "5. Aftercare and Healing",
+        process_step5_description: "Recommendations for new tattoo care for fast and proper healing.",
+        contact_title: "Contact Me",
+        contact_description: "Ready to bring your ideas to life! To book a consultation or session, contact me using any convenient method."
+    },
+    de: {
+        page_title_main: "Portfolio",
+        hero_main_title: "TATTOOKIRILL YUVELIR",
+        nav_about: "Über mich",
+        nav_services: "Dienstleistungen",
+        nav_portfolio: "Arbeiten",
+        nav_process: "Prozess",
+        nav_contact: "Kontakt",
+        hero_subtitle: "Tattoo Deutschland",
+        hero_description_short: "Ihr Meister für exklusive Tattoos",
+        hero_description: "Ihr Meister für exklusive Tattoos.",
+        hero_contact_btn: "Kontaktieren Sie mich",
+        about_title: "Über mich",
+        about_description_new: "Hallo! Mein Name ist Kirill, ich bin Tätowierer und habe meine Reise in diesem Beruf ziemlich früh begonnen – mit 16 Jahren. Alles begann mit meinem ersten Tattoo, das ich ohne die Erlaubnis meiner Eltern bekam. Diese Erfahrung veränderte meine Wahrnehmung völlig: Ich erkannte, dass Tätowieren nicht nur eine Zeichnung auf dem Körper ist, sondern eine wahre Kunst und eine Form der Selbstdarstellung.",
+        about_description_new_part2: "Danach beschloss ich, eine Ausbildung zu machen und tauchte ernsthaft in die Welt der Tattoos ein. Seitdem ist mein Leben untrennbar mit diesem Beruf verbunden. Ich entwickle mich ständig weiter, probiere neue Stile und Techniken aus, damit jedes meiner Tattoos nicht nur eine Zeichnung ist, sondern die Persönlichkeit des Kunden widerspiegelt und mein Beitrag zu seiner einzigartigen Geschichte ist. Mein Ansatz ist nicht nur das Auftragen von Tinte, sondern die Schaffung von Kunstwerken, die Sie viele Jahre lang erfreuen werden.",
+        services_title: "Dienstleistungen",
+        service_realism_title: "Realismus",
+        service_realism_description: "Übertragung von Bildern mit fotografischer Präzision, Detailgenauigkeit und Volumen.",
+        service_japanese_title: "Japanischer Stil",
+        service_japanese_description: "Traditionelle Motive: Drachen, Koi-Karpfen, Samurai. Lebendige Farben und tiefe Symbolik.",
+        service_chicano_title: "Chicano",
+        service_chicano_description: "Kultur lateinamerikanischer Banden: Clownfrauen, Pistolen, Rosen. Kühne Linien und Schatten.",
+        service_ornamental_title: "Ornamental/Grafik",
+        service_ornamental_description: "Muster, Geometrie, Mandalas. Klare Linien und abstrakte Formen.",
+        service_mini_title: "Mini-Tattoo",
+        service_mini_description: "Kleine und zierliche Tattoos. Ideal für erste Erfahrungen oder diskrete Stellen.",
+        portfolio_title: "Meine Arbeiten",
+        process_title: "Tattoo-Erstellungsprozess",
+        process_step1_title: "1. Beratung",
+        process_step1_description: "Besprechung der Idee, des Stils und der Größe des Tattoos, Auswahl der Platzierung.",
+        process_step2_title: "2. Skizzenentwicklung",
+        process_step2_description: "Erstellung einer einzigartigen Skizze unter Berücksichtigung aller Kundenwünsche.",
+        process_step3_title: "3. Vorbereitung auf die Sitzung",
+        process_step3_description: "Vorbereitung des Arbeitsplatzes und der Haut des Kunden, Sicherstellung der Sterilität.",
+        process_step4_title: "4. Tattoo-Anwendung",
+        process_step4_description: "Sorgfältige und präzise Ausführung der Arbeit durch einen professionellen Künstler.",
+        process_step5_title: "5. Pflege und Heilung",
+        process_step5_description: "Empfehlungen zur Pflege des neuen Tattoos für eine schnelle und korrekte Heilung.",
+        contact_title: "Kontaktieren Sie mich",
+        contact_description: "Bereit, Ihre Ideen zum Leben zu erwecken! Um einen Beratungstermin oder eine Sitzung zu buchen, kontaktieren Sie mich auf jede bequeme Weise."
+    },
+    ua: {
         page_title_main: "Портфоліо",
         hero_main_title: "TATTOOKIRILL YUVELIR",
         nav_about: "Про мене",
@@ -59,268 +147,311 @@ const translations = {
         hero_description: "Ваш майстер ексклюзивних татуювань.",
         hero_contact_btn: "Зв'язатися",
         about_title: "Про мене",
-        about_description_new: "Привіт! Мене звуть Кирило, я тату-майстер, і свій шлях у цій професії розпочав досить рано — у 16 років. Все почалося з мого першого татуювання, яке я зробив без дозволу батьків. Цей досвід перевернув моє сприйняття: я зрозумів, що татуювання — це не просто малюнок на тілі, а справжнє мистецтво та спосіб самовираження.",
-        about_description_new_part2: "Після цього я вирішив піти на навчання та занурився у світ татуювань всерйоз. З того часу моє життя нерозривно пов'язане з цією професією. Я постійно розвиваюся, пробую нові стилі та техніки, щоб кожне моє тату було не просто роботою, а унікальною історією, залишеною на тілі людини.",
+        about_description_new: "Привіт! Мене звати Кирило, я тату-майстер, і свій шлях у цій професії розпочав досить рано — у 16 років. Усе почалося з мого першого татуювання, яке я зробив без дозволу батьків. Цей досвід перевернув моє сприйняття: я зрозумів, що татуювання — це не просто малюнок на тілі, а справжнє мистецтво і спосіб самовираження.",
+        about_description_new_part2: "Після цього я вирішив піти на навчання і серйозно занурився у світ татуювань. З тих пір моє життя нерозривно пов'язане з цією професією. Я постійно розвиваюся, пробую нові стилі та техніки, щоб кожне моє тату було не просто малюнком, а відображенням особистості клієнта та моїм внеском у його унікальну історію. Мій підхід — це не просто нанесення чорнила, це створення витворів мистецтва, які радуватимуть вас довгі роки.",
         services_title: "Послуги",
-        services_realism_title: "Реалізм",
-        services_realism_description: "Деталізація та глибина для приголомшливих портретів та сюжетів.",
-        services_japanese_title: "Японський стиль",
-        services_japanese_description: "Традиційні мотиви та яскраві образи з глибоким сенсом.",
-        services_chikano_title: "Чікано",
-        services_chikano_description: "Естетика вулиць та культурні символи, виконані у характерному стилі.",
-        services_graphic_title: "Графіка",
-        services_graphic_description: "Чіткі лінії та контраст для унікального графічного мистецтва.",
-        services_mini_title: "Міні-тату",
-        services_mini_description: "Витончені та акуратні татуювання, ідеальні для першого разу.",
-        portfolio_title: "Роботи",
-        process_title: "Процес створення тату",
-        process_step1_title: "Консультація та розробка",
-        process_step1_description: "Обговорення ідеї, вибір стилю, розробка індивідуального ескізу. Відповідаю на всі питання та допомагаю визначитись з деталями.",
-        process_step2_title: "Підготовка",
-        process_step2_description: "Підготовка шкіри та робочого місця, стерилізація обладнання. Використовую лише одноразові та сертифіковані матеріали.",
-        process_step3_title: "Нанесення тату",
-        process_step3_description: "Акуратне та професійне нанесення татуювання, з урахуванням усіх нюансів та побажань клієнта.",
-        process_step4_title: "Завершення та рекомендації",
-        process_step4_description: "Нанесення захисної пов'язки, докладні інструкції по догляду за свіжою татуюванням для швидкого заживлення та збереження якості.",
-        process_step5_title: "Корекція та доопрацювання",
-        process_step5_description: "За необхідності проводжу корекцію татуювання після загоєння, щоб досягти ідеального результату. Гарантую, що ви будете задоволені своїм новим татуюванням.",
-        contact_title: "Контакти",
-        contact_info_text: "Готовий відповісти на всі ваші запитання та записати на консультацію. Зв'яжіться зі мною зручним для вас способом!",
-        contact_name_label: "Ваше ім'я:",
-        contact_email_label: "Ваш Email:",
-        contact_message_label: "Ваше повідомлення:",
-        contact_send_btn: "Надіслати",
-        footer_rights: "Всі права захищені."
+        service_realism_title: "Реалізм",
+        service_realism_description: "Передача зображення з фотографічною точністю, деталізація та об'єм.",
+        service_japanese_title: "Японський стиль",
+        service_japanese_description: "Традиційні мотиви: дракони, коропи, самураї. Яскраві кольори та глибокий символізм.",
+        service_chicano_title: "Чікано",
+        service_chicano_description: "Культура латиноамериканських банд: клоунеси, пістолети, троянди. Сміливі лінії та тіні.",
+        service_ornamental_title: "Орнаментал/Графіка",
+        service_ornamental_description: "Візерунки, геометрія, мандали. Чисті лінії та абстрактні форми.",
+        service_mini_title: "Міні-тату",
+        service_mini_description: "Маленькі та витончені татуювання. Ідеально для першого досвіду або делікатних зон.",
+        portfolio_title: "Мої роботи",
+        process_title: "Процес створення татуювання",
+        process_step1_title: "1. Консультація",
+        process_step1_description: "Обговорення ідеї, стилю та розміру татуювання, вибір місця нанесення.",
+        process_step2_title: "2. Розробка ескізу",
+        process_step2_description: "Створення унікального ескізу, враховуючи всі побажання клієнта.",
+        process_step3_title: "3. Підготовка до сеансу",
+        process_step3_description: "Підготовка робочого місця та шкіри клієнта, забезпечення стерильності.",
+        process_step4_title: "4. Нанесення татуювання",
+        process_step4_description: "Акуратне та точне виконання роботи професійним майстром.",
+        process_step5_title: "5. Догляд та загоєння",
+        process_step5_description: "Рекомендації щодо догляду за новим татуюванням для швидкого та правильного загоєння.",
+        contact_title: "Зв'яжіться зі мною",
+        contact_description: "Готовий втілити ваші ідеи в життя! Для записи на консультацию или сеанс, свяжитесь со мной любым удобным способом."
     }
 };
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Language switcher functionality
-    const langSwitcher = document.getElementById('lang-switcher');
-    const savedLang = localStorage.getItem('lang') || 'ru'; // Default to Russian if no language is saved
-    langSwitcher.value = savedLang;
-    applyTranslations(savedLang);
-
-    langSwitcher.addEventListener('change', (event) => {
-        const selectedLang = event.target.value;
-        localStorage.setItem('lang', selectedLang);
-        applyTranslations(selectedLang);
-    });
-
-    function applyTranslations(lang) {
-        document.querySelectorAll('[data-lang-key]').forEach(element => {
-            const key = element.dataset.langKey;
-            if (translations[lang] && translations[lang][key]) {
+// Функция для применения переводов
+function applyTranslations(lang) {
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.setAttribute('placeholder', translations[lang][key]);
+            } else {
                 element.textContent = translations[lang][key];
             }
-        });
-        // Update meta description and keywords for SEO
-        if (translations[lang]) {
-            const metaDescription = document.querySelector('meta[name="description"]');
-            if (metaDescription) {
-                if (lang === 'ru') {
-                    metaDescription.setAttribute('content', "Портфолио Кирилла Ювелира - мастера эксклюзивных татуировок в Германии: реализм, японский стиль, чикано, орнаментал, мини-тату.");
-                } else if (lang === 'uk') {
-                    metaDescription.setAttribute('content', "Портфоліо Кирила Ювеліра - майстра ексклюзивних татуювань в Німеччині: реалізм, японський стиль, чікано, орнаментал, міні-тату.");
-                }
-            }
-            const metaKeywords = document.querySelector('meta[name="keywords"]');
-            if (metaKeywords) {
-                if (lang === 'ru') {
-                    metaKeywords.setAttribute('content', "тату, татуировка, тату мастер, Германия, Хемниц, реализм, японский стиль, чикано, орнаментал, мини-тату, Kirill Yuvelir");
-                } else if (lang === 'uk') {
-                    metaKeywords.setAttribute('content', "тату, татуювання, тату майстер, Німеччина, Хемніц, реалізм, японський стиль, чікано, орнаментал, міні-тату, Kirill Yuvelir");
-                }
-            }
         }
+    });
+    // Update current language display
+    const currentLangSpan = document.querySelector('.current-lang');
+    if (currentLangSpan) {
+        currentLangSpan.textContent = lang.toUpperCase();
     }
+}
+
+// Глобальные переменные для лайтбокса
+let lightbox;
+let lightboxImg;
+let closeBtn;
+let prevBtn;
+let nextBtn;
+let galleryImages = []; // Инициализация пустым массивом
+let currentImageIndex = 0;
 
 
-    // AOS initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Aos Initialization
     AOS.init({
         duration: 1000,
         once: true,
     });
 
+    // Language Dropdown functionality
+    const langDropdown = document.querySelector('.language-dropdown');
+    const langDropdownToggle = document.querySelector('.lang-dropdown-toggle');
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    langDropdownToggle.addEventListener('click', () => {
+        langDropdown.classList.toggle('open');
+    });
+
+    langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const lang = option.dataset.lang;
+            localStorage.setItem('selectedLang', lang);
+            applyTranslations(lang);
+            langDropdown.classList.remove('open'); // Close dropdown after selection
+        });
+    });
+
+    // Close language dropdown if clicked outside
+    document.addEventListener('click', (event) => {
+        if (!langDropdown.contains(event.target)) {
+            langDropdown.classList.remove('open');
+        }
+    });
+
+    // Set initial language from localStorage or default to 'ru'
+    const savedLang = localStorage.getItem('selectedLang') || 'ru';
+    applyTranslations(savedLang);
+
     // Smooth scrolling for navigation links
-    document.querySelectorAll('nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth'
-                });
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu after clicking a link
+            const mainNav = document.querySelector('.main-nav');
+            const hamburger = document.querySelector('.hamburger');
+            if (mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.classList.remove('no-scroll');
             }
         });
     });
 
-    // Scroll buttons and social media buttons visibility
+    // Scroll to top/bottom buttons
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
-    const socialFixedButtons = document.querySelector('.social-fixed-buttons'); // Новый селектор
-    const scrollFixedButtons = document.querySelector('.scroll-fixed-buttons'); // Новый селектор
 
-    function updateScrollButtonsVisibility() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const documentHeight = document.documentElement.scrollHeight;
-        const viewportHeight = window.innerHeight;
-
-        // Show/hide scroll to top button
-        if (scrollToTopBtn) {
-            if (scrollTop > 200) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+        } else {
+            scrollToTopBtn.style.display = 'none';
         }
-
-        // Show/hide scroll to bottom button
-        if (scrollToBottomBtn) {
-            // Check if user is near the bottom of the page
-            if (scrollTop + viewportHeight < documentHeight - 100) {
-                scrollToBottomBtn.classList.add('visible');
-            } else {
-                scrollToBottomBtn.classList.remove('visible');
-            }
+        // Show scroll to bottom only if not at the very bottom
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { // 50px buffer
+            scrollToBottomBtn.style.display = 'none';
+        } else {
+            scrollToBottomBtn.style.display = 'flex';
         }
+    });
 
-        // Show/hide social fixed buttons (left side)
-        if (socialFixedButtons) {
-            if (scrollTop > 100) { // Show when scrolled down a bit
-                socialFixedButtons.classList.add('visible');
-            } else {
-                socialFixedButtons.classList.remove('visible');
-            }
-        }
-
-        // Show/hide scroll fixed buttons (right side)
-        if (scrollFixedButtons) {
-            if (scrollTop > 100) { // Show when scrolled down a bit
-                scrollFixedButtons.classList.add('visible');
-            } else {
-                scrollFixedButtons.classList.remove('visible');
-            }
-        }
-    }
-
-    window.addEventListener('scroll', updateScrollButtonsVisibility);
-
-    if (scrollToTopBtn) {
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    }
+    });
 
-    if (scrollToBottomBtn) {
-        scrollToBottomBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: document.documentElement.scrollHeight,
-                behavior: 'smooth'
-            });
+    scrollToBottomBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
         });
-    }
+    });
 
-    // Initial check for button visibility on load
-    updateScrollButtonsVisibility();
-});
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const mainNav = document.querySelector('.main-nav');
 
-// Hide preloader once content is loaded
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hidden');
-        preloader.addEventListener('transitionend', () => {
-            preloader.style.display = 'none'; // Completely remove after transition
-        });
-    }
-    // Initialize Glide.js carousels here once content is loaded
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        document.body.classList.toggle('no-scroll'); // Optional: Prevent scrolling when menu is open
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && !hamburger.contains(e.target) && !langDropdown.contains(e.target) && mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+
+    // Initialize Swiper carousels
+    new Swiper('.services-carousel', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                coverflowEffect: {
+                    depth: 50,
+                },
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+    new Swiper('.portfolio-carousel', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        loop: true,
+        // *** УДАЛЕН БЛОК PAGINATION ДЛЯ ЭТОЙ КАРУСЕЛИ ***
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                coverflowEffect: {
+                    depth: 50,
+                },
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+    new Swiper('.process-carousel', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                coverflowEffect: {
+                    depth: 50,
+                },
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+    // Lightbox functionality - ИНИЦИАЛИЗАЦИЯ ПОСЛЕ Swiper
+    lightbox = document.getElementById('lightbox');
+    lightboxImg = document.getElementById('lightbox-img');
+    closeBtn = document.querySelector('.lightbox-close');
+    prevBtn = document.querySelector('.lightbox-prev');
+    nextBtn = document.querySelector('.lightbox-next');
     
-    // Services Carousel
-    if (document.querySelector('.glide.services-carousel')) {
-        new Glide('.glide.services-carousel', {
-            type: 'carousel', // 'carousel' type for infinite loop
-            startAt: 0,
-            perView: 3,
-            gap: 30,
-            focusAt: 'center', // Focus on the center slide
-            breakpoints: {
-                992: {
-                    perView: 2,
-                    gap: 20
-                },
-                768: {
-                    perView: 1,
-                    gap: 10
-                }
-            }
-        }).mount();
-    }
+    // Получаем изображения после инициализации Swiper, чтобы убедиться, что они в DOM
+    galleryImages = Array.from(document.querySelectorAll('.portfolio-carousel .swiper-slide img')); 
 
-    // Portfolio Carousel
-    if (document.querySelector('.glide.portfolio-carousel')) {
-        new Glide('.glide.portfolio-carousel', {
-            type: 'carousel', // 'carousel' type for infinite loop
-            startAt: 0,
-            perView: 3,
-            gap: 30,
-            focusAt: 'center', // Focus on the center slide
-            breakpoints: {
-                992: {
-                    perView: 2,
-                    gap: 20
-                },
-                768: {
-                    perView: 1,
-                    gap: 10
-                }
-            }
-        }).mount();
-    }
-
-    // Process Carousel
-    if (document.querySelector('.glide.process-carousel')) {
-        new Glide('.glide.process-carousel', {
-            type: 'carousel', // 'carousel' type for infinite loop
-            startAt: 0,
-            perView: 3,
-            gap: 30,
-            focusAt: 'center', // Focus on the center slide
-            breakpoints: {
-                992: {
-                    perView: 2,
-                    gap: 20
-                },
-                768: {
-                    perView: 1,
-                    gap: 10
-                }
-            }
-        }).mount();
-    }
-});
-
-
-// Lightbox functionality
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.lightbox-close');
-const prevBtn = document.querySelector('.lightbox-prev');
-const nextBtn = document.querySelector('.lightbox-next');
-let currentImageIndex;
-let galleryImages = [];
-
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryItems = document.querySelectorAll('.portfolio-carousel .gallery-item img');
-    galleryImages = Array.from(galleryItems);
-
-    galleryItems.forEach((img, index) => {
+    // Привязываем слушатели событий к каждому изображению галереи
+    galleryImages.forEach((img, index) => {
         img.addEventListener('click', () => {
             currentImageIndex = index;
             showImage(currentImageIndex);
@@ -350,16 +481,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Функции лайтбокса (вне DOMContentLoaded, чтобы они были глобально доступны)
 function showImage(index) {
     if (galleryImages.length > 0) {
         lightboxImg.src = galleryImages[index].src;
         lightbox.classList.add('active');
+        document.body.classList.add('no-scroll'); // Добавлено, чтобы страница не скроллилась при открытом лайтбоксе
     }
 }
 
 function closeLightbox() {
     lightbox.classList.remove('active');
     lightboxImg.src = ''; // Clear the image source
+    document.body.classList.remove('no-scroll'); // Добавлено, чтобы страница снова скроллилась
 }
 
 function showPrevImage() {
