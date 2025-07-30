@@ -24,14 +24,19 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Убедимся, что html и body занимают 100% высоты */
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text-light);
-    background-color: #1a1a1a; /* Цвет, который будет виден, если фон не покрывает всю область */
+    background-color: #1a1a1a;
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
-    /* Убираем фоновое изображение из body, теперь оно будет в .global-background */
+    display: flex; /* Используем flexbox для body */
+    flex-direction: column; /* Элементы будут располагаться сверху вниз */
 }
 
 /* Новый глобальный фоновый элемент */
@@ -45,7 +50,7 @@ body {
     background-size: cover; /* По умолчанию для десктопов */
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -2; /* Под всем контентом */
+    z-index: -2;
 }
 
 .container {
@@ -187,7 +192,6 @@ body {
     background-color: var(--secondary-bg);
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    min-width: 80px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 5px 0;
     z-index: 1051;
@@ -266,6 +270,11 @@ body::before {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: -1;
+}
+
+/* Main content area */
+main {
+    flex: 1; /* Позволяет main растягиваться, заполняя доступное пространство */
 }
 
 /* Hero Section - фон fon.JPG */
@@ -623,6 +632,7 @@ body::before {
     text-align: center;
     border-top: 1px solid #333;
     font-size: 0.9em;
+    margin-top: auto; /* Прижимает футер к низу, если контента мало */
 }
 
 /* Fixed Social and Scroll Buttons (DESKTOP) */
@@ -913,14 +923,13 @@ body::before {
 
     /* Мобильная нижняя фиксированная панель мессенджеров */
     .social-fixed-buttons {
-        position: fixed; /* Гарантируем, что панель фиксирована */
+        position: fixed; /* ГЛАВНОЕ ИЗМЕНЕНИЕ: делает панель плавающей */
         bottom: 0; /* Прикрепляем к самому низу экрана */
         left: 0;
         right: 0;
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        transform: none; /* Убираем transform, чтобы избежать конфликтов с fixed */
         top: auto; /* Убедимся, что нет верхней привязки */
         gap: 10px;
         padding: 10px 10px;
