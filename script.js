@@ -1,4 +1,3 @@
-// Объект со всеми переводами - ДОБАВЛЕН УКРАИНСКИЙ
 const translations = {
     ru: {
         page_title_main: "Портфолио",
@@ -14,7 +13,7 @@ const translations = {
         hero_contact_btn: "Связаться",
         about_title: "Обо мне",
         about_description_new: "Привет! Меня зовут Кирилл, я тату-мастер, и свой путь в этой профессии начал довольно рано — в 16 лет. Всё началось с моей первой татуировки, которую я сделал без разрешения родителей. Этот опыт перевернул моё восприятие: я понял, что татуировка — это не просто рисунок на теле, а настоящее искусство и способ самовыражения.",
-        about_description_new_part2: "После этого я решил пойти на обучение и погрузился в мир татуировок всерьёз. С тех пор моя жизнь неразрывно связана с этой профессией. Я постоянно развиваюсь, пробую новые стили и техники, чтобы каждое моё тату было не просто рисунком, а отражением личности клиента и моим вкладом в его уникальную историю. Мой подход — это не просто нанесение чернил, это создание произведений искусства, которые будут радовать вас долгие годы.",
+        about_description_new_part2: "После этого я решил пойти на обучение и погрузился в мир татуировок всерьёз. С тех пор моя жизнь неразрывно связана с этой профессией. Я постоянно развиваюсь, пробую новые стили и техники, чтобы каждое моё тату было не просто работой, а уникальной историей, оставленной на теле человека.",
         services_title: "Услуги",
         service_realism_title: "Реализм",
         service_realism_description: "Передача изображения с фотографической точностью, детализация и объём.",
@@ -54,8 +53,8 @@ const translations = {
         hero_description: "Your master of exclusive tattoos.",
         hero_contact_btn: "Contact Me",
         about_title: "About Me",
-        about_description_new: "Hi! My name is Kirill, I'm a tattoo artist, and I started my journey in this profession quite early — at 16 years old. It all began with my first tattoo, which I got without my parents' permission. This experience completely changed my perception: I realized that tattooing is not just a drawing on the body, but a true art and a way of self-expression.",
-        about_description_new_part2: "After that, I decided to undergo training and seriously immersed myself in the world of tattoos. Since then, my life has been inextricably linked with this profession. I constantly develop, try new styles and techniques, so that each of my tattoos is not just a drawing, but a reflection of the client's personality and my contribution to their unique story. My approach is not just applying ink, it's creating works of art that will delight you for many years.",
+        about_description_new: "Hi! My name is Kirill, I'm a tattoo artist, and I started my journey in this profession quite early — at 16 years old. It all began with my first tattoo, which I got without my parents' permission. This experience completely changed my perception: I realized that a tattoo isn't just a drawing on the body, but a true art form and a way of self-expression.",
+        about_description_new_part2: "After that, I decided to pursue training and immersed myself seriously in the world of tattoos. Since then, my life has been inextricably linked with this profession. I'm constantly developing, trying new styles and techniques so that each of my tattoos is not just a job, but a unique story left on a person's body.",
         services_title: "Services",
         service_realism_title: "Realism",
         service_realism_description: "Achieving photographic accuracy, detail, and volume in tattoos.",
@@ -106,8 +105,8 @@ const translations = {
         hero_description: "Ihr Meister für exklusive Tattoos.",
         hero_contact_btn: "Kontaktieren Sie mich",
         about_title: "Über mich",
-        about_description_new: "Hallo! Mein Name ist Kirill, ich bin Tätowierer und habe meine Reise in diesem Beruf ziemlich früh begonnen – mit 16 Jahren. Alles begann mit meinem ersten Tattoo, das ich ohne die Erlaubnis meiner Eltern bekam. Diese Erfahrung veränderte meine Wahrnehmung völlig: Ich erkannte, dass Tätowieren nicht nur eine Zeichnung auf dem Körper ist, sondern eine wahre Kunst und eine Form der Selbstdarstellung.",
-        about_description_new_part2: "Danach beschloss ich, eine Ausbildung zu machen und tauchte ernsthaft in die Welt der Tattoos ein. Seitdem ist mein Leben untrennbar mit diesem Beruf verbunden. Ich entwickle mich ständig weiter, probiere neue Stile und Techniken aus, damit jedes meiner Tattoos nicht nur eine Zeichnung ist, sondern die Persönlichkeit des Kunden widerspiegelt und mein Beitrag zu seiner einzigartigen Geschichte ist. Mein Ansatz ist nicht nur das Auftragen von Tinte, sondern die Schaffung von Kunstwerken, die Sie viele Jahre lang erfreuen werden.",
+        about_description_new: "Hallo! Mein Name ist Kirill, ich bin Tätowierer und habe meinen Weg in diesem Beruf ziemlich früh begonnen – mit 16 Jahren. Alles begann mit meinem ersten Tattoo, das ich mir ohne die Erlaubnis meiner Eltern stechen ließ. Diese Erfahrung hat meine Wahrnehmung komplett verändert: Ich erkannte, dass ein Tattoo nicht nur eine Zeichnung auf dem Körper ist, sondern eine wahre Kunstform und eine Möglichkeit zur Selbstdarstellung.",
+        about_description_new_part2: "Danach beschloss ich, eine Ausbildung zu machen und tauchte ernsthaft in die Welt der Tattoos ein. Seitdem ist mein Leben untrennbar mit diesem Beruf verbunden. Ich entwickle mich ständig weiter, probiere neue Stile und Techniken aus, damit jedes meiner Tattoos nicht nur eine Arbeit, sondern eine einzigartige Geschichte ist, die auf dem Körper eines Menschen hinterlassen wird.",
         services_title: "Dienstleistungen",
         service_realism_title: "Realismus",
         service_realism_description: "Übertragung von Bildern mit fotografischer Präzision, Detailgenauigkeit und Volumen.",
@@ -122,7 +121,7 @@ const translations = {
         portfolio_title: "Meine Arbeiten",
         process_title: "Tattoo-Erstellungsprozess",
         process_step1_title: "1. Beratung",
-        process_step1_description: "Besprechung der Idee, des Stils und der Größe des Tattoos, Auswahl der Platzierung.",
+        process_step1_description: "Besprechung der Idee, des Stils и der Größe des Tattoos, Auswahl der Platzierung.",
         process_step2_title: "2. Skizzenentwicklung",
         process_step2_description: "Erstellung einer einzigartigen Skizze unter Berücksichtigung aller Kundenwünsche.",
         process_step3_title: "3. Vorbereitung auf die Sitzung",
@@ -147,8 +146,8 @@ const translations = {
         hero_description: "Ваш майстер ексклюзивних татуювань.",
         hero_contact_btn: "Зв'язатися",
         about_title: "Про мене",
-        about_description_new: "Привіт! Мене звати Кирило, я тату-майстер, і свій шлях у цій професії розпочав досить рано — у 16 років. Усе почалося з мого першого татуювання, яке я зробив без дозволу батьків. Цей досвід перевернув моє сприйняття: я зрозумів, що татуювання — це не просто малюнок на тілі, а справжнє мистецтво і спосіб самовираження.",
-        about_description_new_part2: "Після цього я вирішив піти на навчання і серйозно занурився у світ татуювань. З тих пір моє життя нерозривно пов'язане з цією професією. Я постійно розвиваюся, пробую нові стилі та техніки, щоб кожне моє тату було не просто малюнком, а відображенням особистості клієнта та моїм внеском у його унікальну історію. Мій підхід — це не просто нанесення чорнила, це створення витворів мистецтва, які радуватимуть вас довгі роки.",
+        about_description_new: "Привіт! Мене звати Кирило, я тату-майстер, і свій шлях у цій професії я розпочав досить рано — у 16 років. Усе почалося з мого першого татуювання, яке я зробив без дозволу батьків. Цей досвід повністю змінив моє сприйняття: я зрозумів, що татуювання — це не просто малюнок на тілі, а справжнє мистецтво і спосіб самовираження.",
+        about_description_new_part2: "Після цього я вирішив піти на навчання і серйозно занурився у світ татуювань. Відтоді моє життя нерозривно пов'язане з цією професією. Я постійно розвиваюся, пробую нові стилі та техніки, щоб кожне моє тату було не просто роботою, а унікальною історією, залишеною на тілі людини.",
         services_title: "Послуги",
         service_realism_title: "Реалізм",
         service_realism_description: "Передача зображення з фотографічною точністю, деталізація та об'єм.",
@@ -177,7 +176,6 @@ const translations = {
     }
 };
 
-// Функция для применения переводов
 function applyTranslations(lang) {
     document.querySelectorAll('[data-lang-key]').forEach(element => {
         const key = element.getAttribute('data-lang-key');
@@ -189,31 +187,25 @@ function applyTranslations(lang) {
             }
         }
     });
-    // Update current language display
     const currentLangSpan = document.querySelector('.current-lang');
     if (currentLangSpan) {
         currentLangSpan.textContent = lang.toUpperCase();
     }
 }
 
-// Глобальные переменные для лайтбокса
 let lightbox;
 let lightboxImg;
 let closeBtn;
 let prevBtn;
 let nextBtn;
-let galleryImages = []; // Инициализация пустым массивом
-let currentImageIndex = 0;
-
+let galleryImages = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Aos Initialization
     AOS.init({
         duration: 1000,
         once: true,
     });
 
-    // Language Dropdown functionality
     const langDropdown = document.querySelector('.language-dropdown');
     const langDropdownToggle = document.querySelector('.lang-dropdown-toggle');
     const langOptions = document.querySelectorAll('.lang-option');
@@ -227,22 +219,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const lang = option.dataset.lang;
             localStorage.setItem('selectedLang', lang);
             applyTranslations(lang);
-            langDropdown.classList.remove('open'); // Close dropdown after selection
+            langDropdown.classList.remove('open');
         });
     });
 
-    // Close language dropdown if clicked outside
     document.addEventListener('click', (event) => {
         if (!langDropdown.contains(event.target)) {
             langDropdown.classList.remove('open');
         }
     });
 
-    // Set initial language from localStorage or default to 'ru'
     const savedLang = localStorage.getItem('selectedLang') || 'ru';
     applyTranslations(savedLang);
 
-    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -251,7 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 behavior: 'smooth'
             });
 
-            // Close mobile menu after clicking a link
             const mainNav = document.querySelector('.main-nav');
             const hamburger = document.querySelector('.hamburger');
             if (mainNav.classList.contains('active')) {
@@ -262,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll to top/bottom buttons
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
 
@@ -272,8 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             scrollToTopBtn.style.display = 'none';
         }
-        // Show scroll to bottom only if not at the very bottom
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { // 50px buffer
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
             scrollToBottomBtn.style.display = 'none';
         } else {
             scrollToBottomBtn.style.display = 'flex';
@@ -294,17 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const mainNav = document.querySelector('.main-nav');
 
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         mainNav.classList.toggle('active');
-        document.body.classList.toggle('no-scroll'); // Optional: Prevent scrolling when menu is open
+        document.body.classList.toggle('no-scroll');
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!mainNav.contains(e.target) && !hamburger.contains(e.target) && !langDropdown.contains(e.target) && mainNav.classList.contains('active')) {
             mainNav.classList.remove('active');
@@ -313,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize Swiper carousels
     new Swiper('.services-carousel', {
         effect: 'coverflow',
         grabCursor: true,
@@ -327,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slideShadows: true,
         },
         loop: true,
+        loopedSlides: 5,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -370,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slideShadows: true,
         },
         loop: true,
-        // *** УДАЛЕН БЛОК PAGINATION ДЛЯ ЭТОЙ КАРУСЕЛИ ***
+        loopedSlides: 10,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -410,6 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slideShadows: true,
         },
         loop: true,
+        loopedSlides: 5,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -440,17 +425,14 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // Lightbox functionality - ИНИЦИАЛИЗАЦИЯ ПОСЛЕ Swiper
     lightbox = document.getElementById('lightbox');
     lightboxImg = document.getElementById('lightbox-img');
     closeBtn = document.querySelector('.lightbox-close');
     prevBtn = document.querySelector('.lightbox-prev');
     nextBtn = document.querySelector('.lightbox-next');
     
-    // Получаем изображения после инициализации Swiper, чтобы убедиться, что они в DOM
     galleryImages = Array.from(document.querySelectorAll('.portfolio-carousel .swiper-slide img')); 
 
-    // Привязываем слушатели событий к каждому изображению галереи
     galleryImages.forEach((img, index) => {
         img.addEventListener('click', () => {
             currentImageIndex = index;
@@ -481,19 +463,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Функции лайтбокса (вне DOMContentLoaded, чтобы они были глобально доступны)
 function showImage(index) {
     if (galleryImages.length > 0) {
         lightboxImg.src = galleryImages[index].src;
         lightbox.classList.add('active');
-        document.body.classList.add('no-scroll'); // Добавлено, чтобы страница не скроллилась при открытом лайтбоксе
+        document.body.classList.add('no-scroll');
     }
 }
 
 function closeLightbox() {
     lightbox.classList.remove('active');
-    lightboxImg.src = ''; // Clear the image source
-    document.body.classList.remove('no-scroll'); // Добавлено, чтобы страница снова скроллилась
+    lightboxImg.src = '';
+    document.body.classList.remove('no-scroll');
 }
 
 function showPrevImage() {

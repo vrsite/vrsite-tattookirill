@@ -1,8 +1,6 @@
-/* Подключение шрифтов (уже есть в HTML) */
-
 :root {
-    --primary-bg: rgba(25, 25, 25, 0.2); /* Сделано прозрачнее */
-    --secondary-bg: rgba(40, 40, 40, 0.8); /* Более прозрачный для языка */
+    --primary-bg: rgba(25, 25, 25, 0.2);
+    --secondary-bg: rgba(40, 40, 40, 0.8);
     --text-light: #f8f8f8;
     --text-medium: #bbb;
     --text-dark: #888;
@@ -14,17 +12,12 @@
     --shadow-light: rgba(0, 0, 0, 0.5);
     --header-height-desktop: 80px;
     --header-height-mobile: 60px;
-
-    /* Новые переменные для кнопок соцсетей */
-    --social-btn-size: 55px; /* Единый размер для всех кнопок */
-    --social-icon-size: 1.6em; /* Размер иконки внутри кнопки */
-
-    /* Семейства шрифтов */
-    --font-heading: 'Oswald', sans-serif; /* Для заголовков */
-    --font-body: 'Roboto', sans-serif;    /* Для основного текста */
+    --social-btn-size: 55px;
+    --social-icon-size: 1.6em;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 }
 
-/* Общие стили */
 * {
     margin: 0;
     padding: 0;
@@ -34,30 +27,18 @@
 body {
     font-family: var(--font-body);
     color: var(--text-light);
-    background-color: #1a1a1a; /* Основной темный фон */
+    background-color: #1a1a1a;
     line-height: 1.6;
-    overflow-x: hidden; /* Предотвращает горизонтальный скролл */
-    position: relative; /* Для фиксации кнопок */
-    
-    /* Фон для всего сайта под баннером */
-    background-image: url('images/fon2.jpeg');
-    background-size: cover; /* Покрытие всей области */
-    background-attachment: fixed; /* Фиксированный фон при скролле */
-    background-position: center; /* Центрирование фона */
-    background-repeat: no-repeat;
-    /* Легкое затемнение для читабельности, как "запотевшее стекло" */
-    background-blend-mode: multiply; /* Для смешивания с background-color */
-    background-color: rgba(0, 0, 0, 0.7); /* Более темный слой для читабельности */
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Стили для контейнера */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Стили для кнопок */
 .btn {
     display: inline-block;
     background-color: var(--accent-color);
@@ -87,10 +68,9 @@ body {
     letter-spacing: 2px;
 }
 
-/* Header Styles */
 .main-header {
     background-color: var(--primary-bg);
-    backdrop-filter: blur(10px); /* Эффект размытия */
+    backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -158,7 +138,6 @@ body {
     gap: 20px;
 }
 
-/* Language Dropdown */
 .language-dropdown {
     position: relative;
     display: inline-block;
@@ -189,7 +168,7 @@ body {
     display: none;
     position: absolute;
     top: 100%;
-    right: 0; /* Выравнивание по правому краю кнопки */
+    right: 0;
     background-color: var(--secondary-bg);
     border: 1px solid var(--border-color);
     border-radius: 5px;
@@ -225,9 +204,8 @@ body {
     color: #fff;
 }
 
-/* Hamburger Menu Icon */
 .hamburger {
-    display: none; /* Скрыто на больших экранах */
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -236,7 +214,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001; /* Поверх навигации */
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -264,7 +242,30 @@ body {
     width: 120%;
 }
 
-/* Hero Section */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/fon.JPG') no-repeat center center/cover;
     height: 100vh;
@@ -272,7 +273,9 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: var(--header-height-desktop); /* Учитываем высоту хедера */
+    padding-top: var(--header-height-desktop);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-section .container {
@@ -304,10 +307,8 @@ body {
     line-height: 1.8;
 }
 
-/* About Section */
 .about-section {
     padding: 100px 0;
-    /* background-color: #1f1f1f; */ /* Удаляем, так как теперь фон на body */
     text-align: center;
 }
 
@@ -327,16 +328,14 @@ body {
     object-fit: cover;
 }
 
-/* Стили для обертки текста с полупрозрачным фоном */
 .about-text-wrapper {
     width: 60%;
     position: relative;
-    background-color: rgba(42, 42, 42, 0.6); /* Полупрозрачный фон */
-    backdrop-filter: blur(5px); /* Эффект "запотевшего стекла" */
+    background-color: rgba(42, 42, 42, 0.6);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 5px 20px var(--shadow-dark);
-    /* Добавляем легкую анимацию для "облака" */
     animation: fadeInBackground 1s ease-out;
 }
 
@@ -346,7 +345,7 @@ body {
 }
 
 .about-text p {
-    color: var(--text-light); /* Изменено на light для лучшей читаемости */
+    color: var(--text-light);
     font-size: 1.1em;
     margin-bottom: 20px;
 }
@@ -354,26 +353,22 @@ body {
     margin-bottom: 0;
 }
 
-/* Services Section */
 .services-section {
     padding: 100px 0;
-    /* background-color: #1a1a1a; */ /* Удаляем, так как теперь фон на body */
 }
 
-
-
 .service-item {
-    background-color: rgba(42, 42, 42, 0.6); /* Полупрозрачный фон */
+    background-color: rgba(42, 42, 42, 0.6);
     backdrop-filter: blur(5px);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow-medium);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Для Swiper, чтобы слайды имели одинаковую высоту */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Для равномерного распределения контента */
+    justify-content: space-between;
 }
 
 .service-item:hover {
@@ -398,17 +393,13 @@ body {
 }
 
 .service-item p {
-    color: var(--text-light); /* Изменено на light для лучшей читаемости */
+    color: var(--text-light);
     font-size: 1em;
 }
 
-/* Portfolio Section */
 .portfolio-section {
     padding: 100px 0;
-    /* background-color: #1f1f1f; */ /* Удаляем, так как теперь фон на body */
 }
-
-
 
 .gallery-item {
     cursor: pointer;
@@ -435,7 +426,6 @@ body {
     box-shadow: 0 8px 20px var(--shadow-dark);
 }
 
-/* Lightbox Styles */
 .lightbox {
     display: none;
     position: fixed;
@@ -509,23 +499,18 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-/* Process Section */
 .process-section {
     padding: 100px 0;
-    /* background-color: #1a1a1a; */ /* Удаляем, так как теперь фон на body */
 }
 
-
-
 .process-step {
-    background-color: rgba(42, 42, 42, 0.6); /* Полупрозрачный фон */
+    background-color: rgba(42, 42, 42, 0.6);
     backdrop-filter: blur(5px);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px var(--shadow-medium);
-    height: 100%; /* Для Swiper, чтобы слайды имели одинаковую высоту */
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -548,36 +533,34 @@ body {
 }
 
 .process-step p {
-    color: var(--text-light); /* Изменено на light для лучшей читаемости */
+    color: var(--text-light);
     font-size: 1em;
 }
 
-/* Contact Section */
 .contact-section {
     padding: 100px 0;
-    /* background-color: #1f1f1f; */ /* Удаляем, так как теперь фон на body */
 }
 
 .contact-content {
     display: flex;
-    justify-content: center; /* Центрируем, так как форма удалена */
+    justify-content: center;
     gap: 50px;
     align-items: flex-start;
 }
 
 .contact-info {
-    flex: 0 1 auto; /* Адаптивный размер, но не растягивается */
-    background-color: rgba(42, 42, 42, 0.6); /* Полупрозрачный фон */
+    flex: 0 1 auto;
+    background-color: rgba(42, 42, 42, 0.6);
     backdrop-filter: blur(5px);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 20px var(--shadow-dark);
-    text-align: left; /* Вернуть выравнивание текста */
-    animation: fadeInBackground 1s ease-out; /* Анимация как у About */
+    text-align: left;
+    animation: fadeInBackground 1s ease-out;
 }
 
 .contact-info p {
-    color: var(--text-light); /* Изменено на light для лучшей читаемости */
+    color: var(--text-light);
     font-size: 1.1em;
     margin-bottom: 30px;
     line-height: 1.8;
@@ -621,10 +604,9 @@ body {
 
 .social-links a:hover {
     color: var(--accent-color);
-    transform: translateY(-3px) scale(1.1); /* Добавлена анимация масштаба */
+    transform: translateY(-3px) scale(1.1);
 }
 
-/* Footer Styles */
 .main-footer {
     background-color: #111;
     color: var(--text-dark);
@@ -634,7 +616,6 @@ body {
     font-size: 0.9em;
 }
 
-/* Fixed Social and Scroll Buttons */
 .social-fixed-buttons,
 .scroll-fixed-buttons {
     position: fixed;
@@ -666,24 +647,23 @@ body {
     color: #fff;
     font-size: var(--social-icon-size);
     box-shadow: 0 4px 10px var(--shadow-medium);
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Добавлена тень для анимации */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .social-side-btn:hover,
 .scroll-btn:hover {
-    transform: translateY(-5px) scale(1.1); /* Добавлена анимация масштаба */
-    box-shadow: 0 8px 15px var(--shadow-dark); /* Усилена тень */
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 15px var(--shadow-dark);
 }
 
-/* Specific Social Button Colors (optional, but good for branding) */
 .instagram-side-btn { background: #E4405F; }
 .whatsapp-side-btn { background: #25D366; }
 .viber-side-btn { background: #7360F2; }
 .telegram-side-btn { background: #0088CC; }
-.tiktok-side-btn { background: #000; border: 1px solid #fff; } /* TikTok often uses black with white icon */
-
+.tiktok-side-btn { background: #000; border: 1px solid #fff; }
 
 .scroll-btn {
     background-color: var(--accent-color);
@@ -693,7 +673,6 @@ body {
     background-color: var(--accent-hover-color);
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -704,7 +683,6 @@ body {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* Swiper Styles for 3D effect */
 .swiper {
     width: 100%;
     padding-top: 50px;
@@ -714,9 +692,9 @@ body {
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 300px; /* Базовая ширина слайда */
-    height: auto; /* Высота определяется контентом */
-    opacity: 0.7; /* Неактивные слайды немного прозрачнее */
+    width: 300px;
+    height: auto;
+    opacity: 0.7;
     transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -725,9 +703,9 @@ body {
 }
 
 .swiper-slide-active {
-    transform: scale(1.1); /* Активный слайд больше */
-    opacity: 1; /* Полностью непрозрачный */
-    box-shadow: 0 10px 25px var(--shadow-dark); /* Усиленная тень для центрального */
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 10px 25px var(--shadow-dark);
 }
 
 .swiper-slide img {
@@ -737,10 +715,9 @@ body {
     object-fit: cover;
 }
 
-/* Swiper navigation buttons (next/prev) */
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--accent-color) !important; /* Убедимся, что цвет акцентный */
+    color: var(--accent-color) !important;
     transition: transform 0.3s ease;
 }
 
@@ -749,7 +726,6 @@ body {
     transform: scale(1.2);
 }
 
-/* Swiper pagination dots */
 .swiper-pagination-bullet {
     background: var(--text-medium) !important;
     opacity: 0.7 !important;
@@ -760,31 +736,30 @@ body {
     opacity: 1 !important;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .main-header .container {
         height: var(--header-height-mobile);
     }
 
     .main-nav {
-        display: none; /* Скрываем навигацию по умолчанию */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: var(--header-height-mobile);
         left: 0;
         width: 100%;
-        background-color: rgba(25, 25, 25, 0.95); /* Полупрозрачный фон для меню */
+        background-color: rgba(25, 25, 25, 0.95);
         border-top: 1px solid var(--border-color);
         padding: 20px 0;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        transform: translateY(-100%); /* Скрываем вверх */
+        transform: translateY(-100%);
         transition: transform 0.4s ease-out;
         z-index: 900;
     }
 
     .main-nav.active {
-        transform: translateY(0); /* Показываем меню */
-        display: flex; /* Показываем при активном состоянии */
+        transform: translateY(0);
+        display: flex;
     }
 
     .main-nav .nav-list {
@@ -802,7 +777,7 @@ body {
     }
 
     .hamburger {
-        display: flex; /* Показываем гамбургер на мобильных */
+        display: flex;
     }
 
     .hero-section h1 {
@@ -829,7 +804,7 @@ body {
 
     .about-text-wrapper {
         width: 90%;
-        padding: 25px; /* Немного уменьшаем паддинг */
+        padding: 25px;
     }
 
     .contact-content {
@@ -838,12 +813,22 @@ body {
     }
 
     .contact-info {
-        width: 90%; /* Задаем ширину, т.к. flex:1 удален */
+        width: 90%;
         padding: 30px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+    #background-video {
+        width: 100vw;
+        height: 100vh;
+        max-width: none;
+        max-height: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     .section-title {
         font-size: 2.5em;
         margin-bottom: 40px;
@@ -869,18 +854,18 @@ body {
     .service-item, .process-step {
         padding: 20px;
     }
-    .service-item img, .process-step img {
+    .service-item img {
         height: 160px;
     }
-    .service-item h3, .process-step h3 {
+    .service-item h3 {
         font-size: 1.5em;
     }
-    .service-item p, .process-step p {
+    .service-item p {
         font-size: 0.95em;
     }
 
     .swiper-slide {
-        width: 250px; /* Уменьшаем размер слайда для мобильных */
+        width: 250px;
     }
 }
 
@@ -898,51 +883,62 @@ body {
     .service-item, .process-step {
         padding: 15px;
     }
-    .service-item img, .process-step img {
+    .service-item img {
         height: 140px;
     }
-    .service-item h3, .process-step h3 {
+    .service-item h3 {
         font-size: 1.3em;
     }
-    .service-item p, .process-step p {
+    .service-item p {
         font-size: 0.85em;
     }
     
     :root {
-        --social-btn-size: 40px;
+        --social-btn-size: 45px;
         --social-icon-size: 1.4em;
     }
 
-    /* Адаптация кнопок на очень маленьких экранах */
     .social-fixed-buttons,
     .scroll-fixed-buttons {
-        bottom: 70px; /* Поднимаем повыше, чтобы не перекрывать скролл */
-        right: 10px;
-        left: 10px;
-        flex-direction: row; /* Горизонтально для лучшего использования пространства */
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        flex-direction: row;
         justify-content: center;
-        width: auto;
+        width: 100%;
         transform: none;
         top: auto;
-        gap: 8px;
+        gap: 10px;
+        padding: 0 10px;
+        background-color: rgba(25, 25, 25, 0.7);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        height: 70px;
+        align-items: center;
     }
 
-    .social-fixed-buttons.left-side {
-        left: 10px;
-        top: auto;
-        transform: none;
-        bottom: 70px;
-        flex-direction: row;
-        width: auto;
-        right: auto; /* Отменяем right, чтобы не конфликтовать */
-    }
-
+    .social-fixed-buttons.left-side,
     .scroll-fixed-buttons.right-side {
-        right: 10px;
-        bottom: 70px;
+        position: static;
         flex-direction: row;
         width: auto;
-        left: auto; /* Отменяем left, чтобы не конфликтовать */
+        justify-content: center;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+        backdrop-filter: none;
+    }
+
+    .scroll-fixed-buttons {
+        display: none;
+    }
+    
+    .social-fixed-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
     }
 
     .social-side-btn,
@@ -953,18 +949,6 @@ body {
     }
 
     .swiper-slide {
-        width: 200px; /* Еще уменьшаем размер слайда для очень маленьких экранов */
+        width: 200px;
     }
-}
-
-/* Дополнительные стили для затемнения фона body */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Прозрачный темный слой */
-    z-index: -1; /* Помещаем под контент */
 }
