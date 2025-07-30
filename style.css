@@ -25,7 +25,7 @@
 }
 
 html, body {
-    height: 100%; /* Убедимся, что html и body занимают 100% высоты */
+    height: 100%;
 }
 
 body {
@@ -35,8 +35,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
-    display: flex; /* Используем flexbox для body */
-    flex-direction: column; /* Элементы будут располагаться сверху вниз */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Новый глобальный фоновый элемент */
@@ -632,7 +632,7 @@ main {
     text-align: center;
     border-top: 1px solid #333;
     font-size: 0.9em;
-    margin-top: auto; /* Прижимает футер к низу, если контента мало */
+    margin-top: auto;
 }
 
 /* Fixed Social and Scroll Buttons (DESKTOP) */
@@ -888,9 +888,9 @@ main {
 
     /* Адаптация fonsite.jpg для мобильных в .global-background */
     .global-background {
-        background-size: contain; /* Изображение будет полностью видно, не растянуто */
-        background-position: center; /* Центрируем изображение */
-        background-repeat: no-repeat; /* Не повторять фон */
+        background-size: cover; /* Изменено на cover для мобильных */
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .section-title {
@@ -923,7 +923,7 @@ main {
 
     /* Мобильная нижняя фиксированная панель мессенджеров */
     .social-fixed-buttons {
-        position: fixed; /* ГЛАВНОЕ ИЗМЕНЕНИЕ: делает панель плавающей */
+        position: fixed; /* Гарантируем, что панель фиксирована */
         bottom: 0; /* Прикрепляем к самому низу экрана */
         left: 0;
         right: 0;
