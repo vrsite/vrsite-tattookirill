@@ -50,6 +50,7 @@ body {
     background-size: cover; /* По умолчанию для десктопов */
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; /* По умолчанию fixed для десктопов */
     z-index: -2;
 }
 
@@ -274,7 +275,7 @@ body::before {
 
 /* Main content area */
 main {
-    flex: 1; /* Позволяет main растягиваться, заполняя доступное пространство */
+    flex: 1;
 }
 
 /* Hero Section - фон fon.JPG */
@@ -633,6 +634,8 @@ main {
     border-top: 1px solid #333;
     font-size: 0.9em;
     margin-top: auto;
+    /* Увеличим padding-bottom, чтобы футер не перекрывался нижней панелью */
+    padding-bottom: calc(30px + 70px); /* Высота padding + высота мобильной панели */
 }
 
 /* Fixed Social and Scroll Buttons (DESKTOP) */
@@ -654,6 +657,11 @@ main {
 .scroll-fixed-buttons.right-side {
     right: 20px;
     bottom: 20px;
+}
+
+/* Скрываем мобильную панель по умолчанию */
+.mobile-fixed-social-bar {
+    display: none; /* Скрыта на десктопах */
 }
 
 .social-side-btn,
@@ -883,14 +891,16 @@ main {
 @media (max-width: 480px) {
     /* Добавляем padding-bottom к body, чтобы контент не перекрывался нижней панелью */
     body {
-        padding-bottom: 70px; /* Высота нижней фиксированной панели */
+        /* Высота нижней фиксированной панели (70px) + небольшой отступ, чтобы футер был полностью виден */
+        padding-bottom: calc(70px + 20px); /* 70px панель + 20px отступ */
     }
 
     /* Адаптация fonsite.jpg для мобильных в .global-background */
     .global-background {
-        background-size: cover; /* Изменено на cover для мобильных */
+        background-size: cover; /* Для мобильных также cover, чтобы не было пустых мест */
         background-position: center;
         background-repeat: no-repeat;
+        background-attachment: scroll; /* Для мобильных - scroll, чтобы не "скакало" */
     }
 
     .section-title {
@@ -921,62 +931,45 @@ main {
         --social-icon-size: 1.4em;
     }
 
+    /* Скрываем десктопную боковую панель на мобильных */
+    .social-fixed-buttons { /* Теперь это родительский класс для боковой панели */
+        display: none; 
+    }
+    /* Скрываем десктопные кнопки прокрутки на мобильных */
+    .scroll-fixed-buttons {
+        display: none;
+    }
+
     /* Мобильная нижняя фиксированная панель мессенджеров */
-    .social-fixed-buttons {
-        position: fixed; /* Гарантируем, что панель фиксирована */
+    .mobile-fixed-social-bar {
+        position: fixed; /* ГЛАВНОЕ: делает панель плавающей */
         bottom: 0; /* Прикрепляем к самому низу экрана */
         left: 0;
         right: 0;
-        flex-direction: row;
-        justify-content: center;
         width: 100%;
-        top: auto; /* Убедимся, что нет верхней привязки */
-        gap: 10px;
+        height: 70px; /* Фиксированная высота */
+        
+        display: flex; /* Делаем ее flex-контейнером */
+        flex-direction: row; /* Элементы в ряд */
+        justify-content: center; /* Центрируем по горизонтали */
+        align-items: center; /* Центрируем по вертикали */
+        gap: 10px; /* Отступы между кнопками */
+
         padding: 10px 10px;
-        background-color: rgba(25, 25, 25, 0.8);
-        backdrop-filter: blur(8px);
+        background-color: transparent; /* Сделано прозрачным */
+        backdrop-filter: blur(8px); /* Эффект размытия остается */
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
-        height: 70px;
-        align-items: center;
-        z-index: 99999; /* Увеличил z-index до максимального */
-        display: flex; /* Явно указываем display: flex */
+        z-index: 99999; /* Высокий z-index для отображения поверх всего */
     }
 
-    /* Эти стили для дочерних кнопок внутри fixed-панели */
-    /* Их позиционирование должно быть static, чтобы flexbox родителя работал */
-    .social-fixed-buttons.left-side,
-    .scroll-fixed-buttons.right-side {
-        position: static;
-        flex-direction: row;
-        width: auto;
-        justify-content: center;
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-        background-color: transparent;
-        backdrop-filter: none;
-    }
-    
-    /* Скрываем кнопки прокрутки на мобильных, как и было */
-    .scroll-fixed-buttons {
-        display: none; 
-    }
-    
-    /* Для корректной работы flex-wrap */
-    .social-fixed-buttons {
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-    }
-
-    .social-side-btn,
-    .scroll-btn {
+    /* Стили для кнопок внутри мобильной панели */
+    .mobile-fixed-social-bar .social-side-btn {
         width: 45px;
         height: 45px;
         font-size: 1.2em;
+        /* Все остальные стили social-side-btn уже определены выше */
     }
-
+    
     .swiper-slide {
         width: 200px;
     }
