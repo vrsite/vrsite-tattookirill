@@ -31,6 +31,11 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    background-image: url('images/fonsite.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -242,19 +247,6 @@ body {
     width: 120%;
 }
 
-#background-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -2;
-    filter: brightness(0.7);
-    transition: filter 0.3s ease;
-}
-
 body::before {
     content: '';
     position: fixed;
@@ -266,8 +258,10 @@ body::before {
     z-index: -1;
 }
 
+/* Hero Section - фон fon.JPG */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/fon.JPG') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/fon.JPG') no-repeat center 80%;
+    background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -559,6 +553,11 @@ body::before {
     animation: fadeInBackground 1s ease-out;
 }
 
+@keyframes fadeInBackground {
+    from { opacity: 0.5; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 .contact-info p {
     color: var(--text-light);
     font-size: 1.1em;
@@ -616,6 +615,7 @@ body::before {
     font-size: 0.9em;
 }
 
+/* Fixed Social and Scroll Buttons */
 .social-fixed-buttons,
 .scroll-fixed-buttons {
     position: fixed;
@@ -819,16 +819,6 @@ body::before {
 }
 
 @media (max-width: 768px) { 
-    #background-video {
-        width: 100vw;
-        height: 100vh;
-        max-width: none;
-        max-height: none;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
     .section-title {
         font-size: 2.5em;
         margin-bottom: 40px;
@@ -898,9 +888,10 @@ body::before {
         --social-icon-size: 1.4em;
     }
 
-    .social-fixed-buttons,
-    .scroll-fixed-buttons {
-        bottom: 10px;
+    /* Изменения здесь, чтобы панель была фиксированной и плавающей снизу */
+    .social-fixed-buttons {
+        position: fixed; /* ГЛАВНОЕ ИЗМЕНЕНИЕ: делает панель плавающей */
+        bottom: 0; /* Прикрепляет к самому низу экрана */
         left: 0;
         right: 0;
         flex-direction: row;
@@ -909,17 +900,19 @@ body::before {
         transform: none;
         top: auto;
         gap: 10px;
-        padding: 0 10px;
-        background-color: rgba(25, 25, 25, 0.7);
-        backdrop-filter: blur(5px);
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        padding: 10px 10px;
+        background-color: rgba(25, 25, 25, 0.8);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
         height: 70px;
         align-items: center;
+        z-index: 1000; /* Убедимся, что она поверх другого контента */
     }
 
+    /* Чтобы избежать конфликтов с новой фиксированной панелью */
     .social-fixed-buttons.left-side,
     .scroll-fixed-buttons.right-side {
-        position: static;
+        position: static; /* Возвращаем к static внутри контейнера .social-fixed-buttons */
         flex-direction: row;
         width: auto;
         justify-content: center;

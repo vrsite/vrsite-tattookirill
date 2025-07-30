@@ -105,8 +105,8 @@ const translations = {
         hero_description: "Ihr Meister für exklusive Tattoos.",
         hero_contact_btn: "Kontaktieren Sie mich",
         about_title: "Über mich",
-        about_description_new: "Hallo! Mein Name ist Kirill, ich bin Tätowierer und habe meinen Weg in diesem Beruf ziemlich früh begonnen – mit 16 Jahren. Alles begann mit meinem ersten Tattoo, das ich mir ohne die Erlaubnis meiner Eltern stechen ließ. Diese Erfahrung hat meine Wahrnehmung komplett verändert: Ich erkannte, dass ein Tattoo nicht nur eine Zeichnung auf dem Körper ist, sondern eine wahre Kunstform und eine Möglichkeit zur Selbstdarstellung.",
-        about_description_new_part2: "Danach beschloss ich, eine Ausbildung zu machen und tauchte ernsthaft in die Welt der Tattoos ein. Seitdem ist mein Leben untrennbar mit diesem Beruf verbunden. Ich entwickle mich ständig weiter, probiere neue Stile und Techniken aus, damit jedes meiner Tattoos nicht nur eine Arbeit, sondern eine einzigartige Geschichte ist, die auf dem Körper eines Menschen hinterlassen wird.",
+        about_description_new: "Hallo! Mein Name ist Kirill, ich bin Tätowierer und habe meinen Weg in diesem Beruf ziemlich früh begonnen – с 16 Jahren. Alles begann mit meinem ersten Tattoo, das ich mir ohne die Erlaubnis meiner Eltern stechen ließ. Diese Erfahrung hat meine Wahrnehmung komplett verändert: Ich erkannte, dass ein Tattoo nicht nur eine Zeichnung auf dem Körper ist, sondern eine wahre Kunstform und eine Möglichkeit zur Selbstdarstellung.",
+        about_description_new_part2: "Danach beschloss ich, eine Ausbildung zu machen и tauchte ernsthaft in die Welt der Tattoos ein. Seitdem ist mein Leben untrennbar mit diesem Beruf verbunden. Ich entwickle mich ständig weiter, probiere neue Stile und Techniken aus, damit jedes meiner Tattoos nicht nur eine Arbeit, sondern eine einzigartige Geschichte ist, die auf dem Körper eines Menschen hinterlassen wird.",
         services_title: "Dienstleistungen",
         service_realism_title: "Realismus",
         service_realism_description: "Übertragung von Bildern mit fotografischer Präzision, Detailgenauigkeit und Volumen.",
@@ -117,7 +117,7 @@ const translations = {
         service_ornamental_title: "Ornamental/Grafik",
         service_ornamental_description: "Muster, Geometrie, Mandalas. Klare Linien und abstrakte Formen.",
         service_mini_title: "Mini-Tattoo",
-        service_mini_description: "Kleine und zierliche Tattoos. Ideal für erste Erfahrungen oder diskrete Stellen.",
+        service_mini_description: "Kleine und zierliche Tattoos. Ideal für erste Erfahrungen или diskrete Stellen.",
         portfolio_title: "Meine Arbeiten",
         process_title: "Tattoo-Erstellungsprozess",
         process_step1_title: "1. Beratung",
@@ -201,11 +201,184 @@ let nextBtn;
 let galleryImages = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({
-        duration: 1000,
-        once: true,
-    });
+    // Весь код, вызывающий reflow/layout, обернут в setTimeout
+    setTimeout(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
 
+        // Инициализация Swiper carousels
+        new Swiper('.services-carousel', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            loopedSlides: 5, 
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    coverflowEffect: {
+                        depth: 50,
+                    },
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+
+        new Swiper('.portfolio-carousel', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            loopedSlides: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    coverflowEffect: {
+                        depth: 50,
+                    },
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+
+        new Swiper('.process-carousel', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            loopedSlides: 5,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    coverflowEffect: {
+                        depth: 50,
+                    },
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+
+        // Lightbox functionality оставим здесь, так как он должен быть готов после Swiper
+        lightbox = document.getElementById('lightbox');
+        lightboxImg = document.getElementById('lightbox-img');
+        closeBtn = document.querySelector('.lightbox-close');
+        prevBtn = document.querySelector('.lightbox-prev');
+        nextBtn = document.querySelector('.lightbox-next');
+        
+        galleryImages = Array.from(document.querySelectorAll('.portfolio-carousel .swiper-slide img')); 
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                showImage(currentImageIndex);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        prevBtn.addEventListener('click', showPrevImage);
+        nextBtn.addEventListener('click', showNextImage);
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    showPrevImage();
+                } else if (e.key === 'ArrowRight') {
+                    showNextImage();
+                } else if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            }
+        });
+
+    }, 50); // Задержка в 50 миллисекунд
+    
+    // Остальной код DOMContentLoaded, который не вызывает reflow, можно оставить снаружи setTimeout
+    // Language Dropdown functionality
     const langDropdown = document.querySelector('.language-dropdown');
     const langDropdownToggle = document.querySelector('.lang-dropdown-toggle');
     const langOptions = document.querySelectorAll('.lang-option');
@@ -232,6 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLang') || 'ru';
     applyTranslations(savedLang);
 
+    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -250,6 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Scroll to top/bottom buttons
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
 
@@ -280,6 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const mainNav = document.querySelector('.main-nav');
 
@@ -289,6 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('no-scroll');
     });
 
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!mainNav.contains(e.target) && !hamburger.contains(e.target) && !langDropdown.contains(e.target) && mainNav.classList.contains('active')) {
             mainNav.classList.remove('active');
@@ -297,172 +474,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    new Swiper('.services-carousel', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        },
-        loop: true,
-        loopedSlides: 5,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3500,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                coverflowEffect: {
-                    depth: 50,
-                },
-            },
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-        },
-    });
+}); // Конец DOMContentLoaded
 
-    new Swiper('.portfolio-carousel', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        },
-        loop: true,
-        loopedSlides: 10,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                coverflowEffect: {
-                    depth: 50,
-                },
-            },
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-        },
-    });
 
-    new Swiper('.process-carousel', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        },
-        loop: true,
-        loopedSlides: 5,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                coverflowEffect: {
-                    depth: 50,
-                },
-            },
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-        },
-    });
-
-    lightbox = document.getElementById('lightbox');
-    lightboxImg = document.getElementById('lightbox-img');
-    closeBtn = document.querySelector('.lightbox-close');
-    prevBtn = document.querySelector('.lightbox-prev');
-    nextBtn = document.querySelector('.lightbox-next');
-    
-    galleryImages = Array.from(document.querySelectorAll('.portfolio-carousel .swiper-slide img')); 
-
-    galleryImages.forEach((img, index) => {
-        img.addEventListener('click', () => {
-            currentImageIndex = index;
-            showImage(currentImageIndex);
-        });
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
-
-    prevBtn.addEventListener('click', showPrevImage);
-    nextBtn.addEventListener('click', showNextImage);
-
-    document.addEventListener('keydown', (e) => {
-        if (lightbox.classList.contains('active')) {
-            if (e.key === 'ArrowLeft') {
-                showPrevImage();
-            } else if (e.key === 'ArrowRight') {
-                showNextImage();
-            } else if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        }
-    });
-});
-
+// Функции лайтбокса (вне DOMContentLoaded, чтобы они были глобально доступны)
 function showImage(index) {
     if (galleryImages.length > 0) {
         lightboxImg.src = galleryImages[index].src;
