@@ -27,15 +27,25 @@
 body {
     font-family: var(--font-body);
     color: var(--text-light);
-    background-color: #1a1a1a;
+    background-color: #1a1a1a; /* Цвет, который будет виден, если фон не покрывает всю область */
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    /* Убираем фоновое изображение из body, теперь оно будет в .global-background */
+}
+
+/* Новый глобальный фоновый элемент */
+.global-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('images/fonsite.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: cover; /* По умолчанию для десктопов */
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -2; /* Под всем контентом */
 }
 
 .container {
@@ -615,7 +625,7 @@ body::before {
     font-size: 0.9em;
 }
 
-/* Fixed Social and Scroll Buttons */
+/* Fixed Social and Scroll Buttons (DESKTOP) */
 .social-fixed-buttons,
 .scroll-fixed-buttons {
     position: fixed;
@@ -859,7 +869,20 @@ body::before {
     }
 }
 
+/* Стили для мобильных устройств (ширина до 480px) */
 @media (max-width: 480px) {
+    /* Добавляем padding-bottom к body, чтобы контент не перекрывался нижней панелью */
+    body {
+        padding-bottom: 70px; /* Высота нижней фиксированной панели */
+    }
+
+    /* Адаптация fonsite.jpg для мобильных в .global-background */
+    .global-background {
+        background-size: contain; /* Изображение будет полностью видно, не растянуто */
+        background-position: center; /* Центрируем изображение */
+        background-repeat: no-repeat; /* Не повторять фон */
+    }
+
     .section-title {
         font-size: 1.8em;
         margin-bottom: 30px;
@@ -888,17 +911,17 @@ body::before {
         --social-icon-size: 1.4em;
     }
 
-    /* Изменения здесь, чтобы панель была фиксированной и плавающей снизу */
+    /* Мобильная нижняя фиксированная панель мессенджеров */
     .social-fixed-buttons {
-        position: fixed; /* ГЛАВНОЕ ИЗМЕНЕНИЕ: делает панель плавающей */
-        bottom: 0; /* Прикрепляет к самому низу экрана */
+        position: fixed; /* Гарантируем, что панель фиксирована */
+        bottom: 0; /* Прикрепляем к самому низу экрана */
         left: 0;
         right: 0;
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        transform: none;
-        top: auto;
+        transform: none; /* Убираем transform, чтобы избежать конфликтов с fixed */
+        top: auto; /* Убедимся, что нет верхней привязки */
         gap: 10px;
         padding: 10px 10px;
         background-color: rgba(25, 25, 25, 0.8);
@@ -906,13 +929,15 @@ body::before {
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
         height: 70px;
         align-items: center;
-        z-index: 1000; /* Убедимся, что она поверх другого контента */
+        z-index: 99999; /* Увеличил z-index до максимального */
+        display: flex; /* Явно указываем display: flex */
     }
 
-    /* Чтобы избежать конфликтов с новой фиксированной панелью */
+    /* Эти стили для дочерних кнопок внутри fixed-панели */
+    /* Их позиционирование должно быть static, чтобы flexbox родителя работал */
     .social-fixed-buttons.left-side,
     .scroll-fixed-buttons.right-side {
-        position: static; /* Возвращаем к static внутри контейнера .social-fixed-buttons */
+        position: static;
         flex-direction: row;
         width: auto;
         justify-content: center;
@@ -923,11 +948,13 @@ body::before {
         background-color: transparent;
         backdrop-filter: none;
     }
-
+    
+    /* Скрываем кнопки прокрутки на мобильных, как и было */
     .scroll-fixed-buttons {
-        display: none;
+        display: none; 
     }
     
+    /* Для корректной работы flex-wrap */
     .social-fixed-buttons {
         flex-wrap: wrap;
         justify-content: center;

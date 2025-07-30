@@ -105,7 +105,7 @@ const translations = {
         hero_description: "Ihr Meister für exklusive Tattoos.",
         hero_contact_btn: "Kontaktieren Sie mich",
         about_title: "Über mich",
-        about_description_new: "Hallo! Mein Name ist Kirill, ich bin Tätowierer und habe meinen Weg in diesem Beruf ziemlich früh begonnen – с 16 Jahren. Alles begann mit meinem ersten Tattoo, das ich mir ohne die Erlaubnis meiner Eltern stechen ließ. Diese Erfahrung hat meine Wahrnehmung komplett verändert: Ich erkannte, dass ein Tattoo nicht nur eine Zeichnung auf dem Körper ist, sondern eine wahre Kunstform und eine Möglichkeit zur Selbstdarstellung.",
+        about_description_new: "Hallo! Mein Name ist Kirill, ich bin Tätowierer и habe meinen Weg in diesem Beruf ziemlich früh begonnen – с 16 Jahren. Alles begann mit meinem ersten Tattoo, das ich mir ohne die Erlaubnis meiner Eltern stechen ließ. Diese Erfahrung hat meine Wahrnehmung komplett verändert: Ich erkannte, dass ein Tattoo nicht nur eine Zeichnung auf dem Körper ist, sondern eine wahre Kunstform и eine Möglichkeit zur Selbstdarstellung.",
         about_description_new_part2: "Danach beschloss ich, eine Ausbildung zu machen и tauchte ernsthaft in die Welt der Tattoos ein. Seitdem ist mein Leben untrennbar mit diesem Beruf verbunden. Ich entwickle mich ständig weiter, probiere neue Stile und Techniken aus, damit jedes meiner Tattoos nicht nur eine Arbeit, sondern eine einzigartige Geschichte ist, die auf dem Körper eines Menschen hinterlassen wird.",
         services_title: "Dienstleistungen",
         service_realism_title: "Realismus",
@@ -131,7 +131,7 @@ const translations = {
         process_step5_title: "5. Pflege und Heilung",
         process_step5_description: "Empfehlungen zur Pflege des neuen Tattoos für eine schnelle und korrekte Heilung.",
         contact_title: "Kontaktieren Sie mich",
-        contact_description: "Bereit, Ihre Ideen zum Leben zu erwecken! Um einen Beratungstermin oder eine Sitzung zu buchen, kontaktieren Sie mich auf jede bequeme Weise."
+        contact_description: "Bereit, Ihre Ideen zum Leben zu erwecken! Um einen Beratungstermin или eine Sitzung zu buchen, kontaktieren Sie mich auf jede bequeme Weise."
     },
     ua: {
         page_title_main: "Портфоліо",
