@@ -5,6 +5,7 @@ const translations = {
         nav_about: "Обо мне",
         nav_services: "Услуги",
         nav_portfolio: "Работы",
+        nav_portfolio_videos: "Видео",
         nav_process: "Процесс",
         nav_contact: "Контакты",
         hero_subtitle: "Tattoo Germany",
@@ -26,6 +27,7 @@ const translations = {
         service_mini_title: "Мини-тату",
         service_mini_description: "Маленькие и изящные татуировки. Идеально для первого опыта или деликатных зон.",
         portfolio_title: "Мои работы",
+        portfolio_videos_title: "Видео работ",
         process_title: "Процесс создания татуировки",
         process_step1_title: "1. Консультация",
         process_step1_description: "Обсуждение идеи, стиля и размера татуировки, выбор места нанесения.",
@@ -46,6 +48,7 @@ const translations = {
         nav_about: "About",
         nav_services: "Services",
         nav_portfolio: "Works",
+        nav_portfolio_videos: "Videos",
         nav_process: "Process",
         nav_contact: "Contact",
         hero_subtitle: "Tattoo Germany",
@@ -67,17 +70,7 @@ const translations = {
         service_mini_title: "Mini-Tattoo",
         service_mini_description: "Small and delicate tattoos. Ideal for first-timers or subtle placements.",
         portfolio_title: "My Works",
-        process_title: "Tattoo Creation Process",
-        process_step1_title: "1. Consultation",
-        process_step1_description: "Discussing the idea, style, and size of the tattoo, choosing the placement.",
-        process_step2_title: "2. Sketch Development",
-        process_step2_description: "Creating a unique sketch, considering all client wishes.",
-        process_step3_title: "3. Session Preparation",
-        process_step3_description: "Preparing the workspace and client's skin, ensuring sterility.",
-        process_step4_title: "4. Tattoo Application",
-        process_step4_description: "Careful and precise execution of the work by a professional artist.",
-        service_mini_description: "Small and delicate tattoos. Ideal for first-timers or subtle placements.",
-        portfolio_title: "My Works",
+        portfolio_videos_title: "My Videos",
         process_title: "Tattoo Creation Process",
         process_step1_title: "1. Consultation",
         process_step1_description: "Discussing the idea, style, and size of the tattoo, choosing the placement.",
@@ -98,6 +91,7 @@ const translations = {
         nav_about: "Über mich",
         nav_services: "Dienstleistungen",
         nav_portfolio: "Arbeiten",
+        nav_portfolio_videos: "Videos",
         nav_process: "Prozess",
         nav_contact: "Kontakt",
         hero_subtitle: "Tattoo Deutschland",
@@ -119,6 +113,7 @@ const translations = {
         service_mini_title: "Mini-Tattoo",
         service_mini_description: "Kleine und zierliche Tattoos. Ideal für erste Erfahrungen или diskrete Stellen.",
         portfolio_title: "Meine Arbeiten",
+        portfolio_videos_title: "Meine Videos",
         process_title: "Tattoo-Erstellungsprozess",
         process_step1_title: "1. Beratung",
         process_step1_description: "Besprechung der Idee, des Stils и der Größe des Tattoos, Auswahl der Platzierung.",
@@ -139,6 +134,7 @@ const translations = {
         nav_about: "Про мене",
         nav_services: "Послуги",
         nav_portfolio: "Роботи",
+        nav_portfolio_videos: "Відео",
         nav_process: "Процес",
         nav_contact: "Контакти",
         hero_subtitle: "Tattoo Germany",
@@ -160,6 +156,7 @@ const translations = {
         service_mini_title: "Міні-тату",
         service_mini_description: "Маленькі та витончені татуювання. Ідеально для першого досвіду або делікатних зон.",
         portfolio_title: "Мої роботи",
+        portfolio_videos_title: "Відео робіт",
         process_title: "Процес створення татуювання",
         process_step1_title: "1. Консультація",
         process_step1_description: "Обговорення ідеї, стилю та розміру татуювання, вибір місця нанесення.",
@@ -375,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-    }, 50); // Задержка в 50 миллисекунд
+    }, 50);
     
     // Остальной код DOMContentLoaded, который не вызывает reflow, можно оставить снаружи setTimeout
     // Language Dropdown functionality
@@ -474,10 +471,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-}); // Конец DOMContentLoaded
+});
 
-
-// Функции лайтбокса (вне DOMContentLoaded, чтобы они были глобально доступны)
 function showImage(index) {
     if (galleryImages.length > 0) {
         lightboxImg.src = galleryImages[index].src;
